@@ -1,0 +1,225 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_drugid",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_fullamount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_releasedate",
+						"type": "uint256"
+					}
+				],
+				"name": "addPatch",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_patchid",
+						"type": "uint256"
+					}
+				],
+				"name": "get",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "PatchNo",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "DrugID",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "FullAmount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "ReleaseDate",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct Patchs.Patch",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getPatch",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getPatchs",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "PatchNo",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "DrugID",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "FullAmount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "ReleaseDate",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct Patchs.Patch[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "patchs",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "PatchNo",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "DrugID",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "FullAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "ReleaseDate",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "patchsCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Patch.sol": "Patchs"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Patch.sol": {
+			"keccak256": "0x77a9f18f384cc36490d8aef43bfa514bfdab4b39f066f0c68641d5057a2ec772",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://0051c64c05124c835142a4056d12042cf2e42f12714f8ecc942769f165e4f951",
+				"dweb:/ipfs/QmUp2jCksTavSYJBeJYwTyQ46QnyZZFV4gkvkDENFsG3dA"
+			]
+		}
+	},
+	"version": 1
+}

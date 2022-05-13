@@ -1,0 +1,242 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_regno",
+						"type": "string"
+					}
+				],
+				"name": "addDrug",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_drugid",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "_status",
+						"type": "bool"
+					}
+				],
+				"name": "changeDrugStatus",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "drugs",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "RegNo",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "Manufacturer",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "IsActive",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "drugsCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_regno",
+						"type": "string"
+					}
+				],
+				"name": "get",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "RegNo",
+								"type": "string"
+							},
+							{
+								"internalType": "address",
+								"name": "Manufacturer",
+								"type": "address"
+							},
+							{
+								"internalType": "bool",
+								"name": "IsActive",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct Drugs.Drug",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getDrug",
+				"outputs": [
+					{
+						"internalType": "string[]",
+						"name": "",
+						"type": "string[]"
+					},
+					{
+						"internalType": "address[]",
+						"name": "",
+						"type": "address[]"
+					},
+					{
+						"internalType": "bool[]",
+						"name": "",
+						"type": "bool[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getDrugs",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "RegNo",
+								"type": "string"
+							},
+							{
+								"internalType": "address",
+								"name": "Manufacturer",
+								"type": "address"
+							},
+							{
+								"internalType": "bool",
+								"name": "IsActive",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct Drugs.Drug[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"name": "newdrugs",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "RegNo",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "Manufacturer",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "IsActive",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Drugs.sol": "Drugs"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Drugs.sol": {
+			"keccak256": "0xe6eb04acdd825766a32ddcc6afd9bd831bfe9d6b1e8ffe12d7ead882301d025a",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://2fd3a798ece33ea3b5f7f8982072596a3ebcde5cc49f10a003b2b0ec24613dd0",
+				"dweb:/ipfs/QmXF5cyVEdnr1LfFtbHSRpr5Rpcqy7aDXfCWQmhMP9PhA3"
+			]
+		}
+	},
+	"version": 1
+}
