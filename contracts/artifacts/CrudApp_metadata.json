@@ -1,0 +1,264 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "countryName",
+						"type": "string"
+					}
+				],
+				"name": "CountryDelete",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "countryName",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "leader",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "population",
+						"type": "uint256"
+					}
+				],
+				"name": "CountryEvent",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "countryName",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "leader",
+						"type": "string"
+					}
+				],
+				"name": "LeaderUpdated",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "countries",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "leader",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "population",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "countryName",
+						"type": "string"
+					}
+				],
+				"name": "deleteCountry",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "success",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "countryName",
+						"type": "string"
+					}
+				],
+				"name": "getCountry",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "leader",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "population",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getTotalCountries",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "length",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "countryName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "leader",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "population",
+						"type": "uint256"
+					}
+				],
+				"name": "insert",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "_totalCountries",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalCountries",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "countryName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "newLeader",
+						"type": "string"
+					}
+				],
+				"name": "updateLeader",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "success",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Test.sol": "CrudApp"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Test.sol": {
+			"keccak256": "0x8dc9f5ad74cdaf2d03a23a44b513edd0949bafb7e36e07a4f3c225e5d2a9fa5f",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://32992d432375a5b7587893a2248629b05596300983654c6a76c4c3f717d0b819",
+				"dweb:/ipfs/QmRLEAuzSHVezVYkstrWpup7fCLvkjARoRQtxYHXxrYNwR"
+			]
+		}
+	},
+	"version": 1
+}

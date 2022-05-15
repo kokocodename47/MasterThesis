@@ -3,7 +3,7 @@ pragma solidity ^0.8.0;
 pragma experimental ABIEncoderV2;
 contract Drugs {
     struct Drug{
-        // uint DrugID;
+        uint DrugID;
         string RegNo;
         address Manufacturer;
         bool IsActive;
@@ -21,32 +21,42 @@ contract Drugs {
         drugsCount = 0;
         owner = msg.sender;
     }
+
+//     Drug[] private Drugs;
+
+// function getDrugStruct() public view returns(Drug[] memory) {
+//   return Drug;
+// }
+
+
     function addDrug(string memory _regno) public{
-        newdrugs[_regno] = Drug(_regno,msg.sender , true);
+        drugs[drugsCount] = Drug(drugsCount, _regno,msg.sender , true);
         drugsCount++;
     }
     //return Single structure
-    function get(string memory _regno) public view returns(Drug memory) {
-        return newdrugs[_regno];
+    function get(uint _drugid) public view returns(Drug memory) {
+        return drugs[_drugid];
     }
     //return Array of structure Value
-    function getDrug() public view returns (string[] memory, address[] memory, bool[] memory){
+    function getDrug() public view returns (uint[] memory, string[] memory, address[] memory, bool[] memory){
+        uint[] memory drugid = new uint[](drugsCount);
         string[]  memory regno = new string[](drugsCount);
         address[]  memory manufacturer = new address[](drugsCount);   
         bool[] memory isactive = new bool[](drugsCount);    
         for (uint i = 0; i < drugsCount; i++) {
             Drug storage drug = drugs[i];
+
             regno[i] = drug.RegNo;
             manufacturer[i] = drug.Manufacturer;
             isactive[i] = drug.IsActive;
         }
-        return (regno, manufacturer, isactive);
+        return (drugid, regno, manufacturer, isactive);
     }
     //return Array of structure
     function getDrugs() public view returns (Drug[] memory){
         Drug[]    memory id = new Drug[](drugsCount);
         for (uint i = 0; i < drugsCount; i++) {
-            Drug storage drug = newdrugs[i];
+            Drug storage drug = drugs[i];
             id[i] = drug;
         }
         return id;

@@ -24,12 +24,12 @@
 					},
 					{
 						"internalType": "uint256",
-						"name": "_currentowner",
+						"name": "_fromowner",
 						"type": "uint256"
 					},
 					{
 						"internalType": "uint256",
-						"name": "_fromowner",
+						"name": "_toowner",
 						"type": "uint256"
 					},
 					{
@@ -82,12 +82,12 @@
 							},
 							{
 								"internalType": "uint256",
-								"name": "CurrentOwner",
+								"name": "FromOwner",
 								"type": "uint256"
 							},
 							{
 								"internalType": "uint256",
-								"name": "FromOwner",
+								"name": "ToOwner",
 								"type": "uint256"
 							},
 							{
@@ -180,12 +180,12 @@
 							},
 							{
 								"internalType": "uint256",
-								"name": "CurrentOwner",
+								"name": "FromOwner",
 								"type": "uint256"
 							},
 							{
 								"internalType": "uint256",
-								"name": "FromOwner",
+								"name": "ToOwner",
 								"type": "uint256"
 							},
 							{
@@ -239,12 +239,12 @@
 					},
 					{
 						"internalType": "uint256",
-						"name": "CurrentOwner",
+						"name": "FromOwner",
 						"type": "uint256"
 					},
 					{
 						"internalType": "uint256",
-						"name": "FromOwner",
+						"name": "ToOwner",
 						"type": "uint256"
 					},
 					{
@@ -308,11 +308,11 @@
 	},
 	"sources": {
 		"contracts/Transaction.sol": {
-			"keccak256": "0x93c39d3021bdb57b6665651922e0bdaed8492eeb9a4be1aa1eb615ee528f7ccb",
+			"keccak256": "0x3ed739a7e209cdbcbdf7c53041cb9de2174ba7aebb11ff5dc5becfcfed779e00",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://68e7e498bbbb6267e8e685ffd65e6d8ea1e3df49993e8ed772bf6d3dfbba6e62",
-				"dweb:/ipfs/QmViUtceKGpwEgwaB36KaeM62WsbGZQz7RLpcCKKavxTKA"
+				"bzz-raw://9f791013b3ba2ac34b2d01936abc50016a0e3884eb5f2af50bd8697d60825422",
+				"dweb:/ipfs/QmVK3mjMujVqD4tY6GnG21b3AH7hb2JE694zSPucHXGeuY"
 			]
 		}
 	},

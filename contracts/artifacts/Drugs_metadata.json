@@ -52,6 +52,11 @@
 				"name": "drugs",
 				"outputs": [
 					{
+						"internalType": "uint256",
+						"name": "DrugID",
+						"type": "uint256"
+					},
+					{
 						"internalType": "string",
 						"name": "RegNo",
 						"type": "string"
@@ -86,15 +91,20 @@
 			{
 				"inputs": [
 					{
-						"internalType": "string",
-						"name": "_regno",
-						"type": "string"
+						"internalType": "uint256",
+						"name": "_drugid",
+						"type": "uint256"
 					}
 				],
 				"name": "get",
 				"outputs": [
 					{
 						"components": [
+							{
+								"internalType": "uint256",
+								"name": "DrugID",
+								"type": "uint256"
+							},
 							{
 								"internalType": "string",
 								"name": "RegNo",
@@ -124,6 +134,11 @@
 				"name": "getDrug",
 				"outputs": [
 					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					},
+					{
 						"internalType": "string[]",
 						"name": "",
 						"type": "string[]"
@@ -148,6 +163,11 @@
 				"outputs": [
 					{
 						"components": [
+							{
+								"internalType": "uint256",
+								"name": "DrugID",
+								"type": "uint256"
+							},
 							{
 								"internalType": "string",
 								"name": "RegNo",
@@ -182,6 +202,11 @@
 				],
 				"name": "newdrugs",
 				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "DrugID",
+						"type": "uint256"
+					},
 					{
 						"internalType": "string",
 						"name": "RegNo",
@@ -230,11 +255,11 @@
 	},
 	"sources": {
 		"contracts/Drugs.sol": {
-			"keccak256": "0xe6eb04acdd825766a32ddcc6afd9bd831bfe9d6b1e8ffe12d7ead882301d025a",
+			"keccak256": "0x9648f759824e4a3eeb4cb9f0e61a9cc440c00d7e47527d7e94cb994978ac65e1",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://2fd3a798ece33ea3b5f7f8982072596a3ebcde5cc49f10a003b2b0ec24613dd0",
-				"dweb:/ipfs/QmXF5cyVEdnr1LfFtbHSRpr5Rpcqy7aDXfCWQmhMP9PhA3"
+				"bzz-raw://443bce4c976cc990a86bc3b68e58962f5b980f5f15b5a01a6ab8bc249c48ca0f",
+				"dweb:/ipfs/QmdjTjENoKV9i2Ark8HXSpDpmXcrKpVtnF89TXvAAqExnE"
 			]
 		}
 	},

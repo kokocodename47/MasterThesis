@@ -5,8 +5,8 @@ contract Transactions{
         uint TransactionID;
         uint DrugID;
         uint PatchNo;
-        uint CurrentOwner;
         uint FromOwner;
+        uint ToOwner;
         uint FullAmount;
         uint RemainAmount;
         uint TransactionDate;
@@ -19,8 +19,8 @@ contract Transactions{
         transactionsCount = 0;
     }
 
-    function addTransaction(uint _drugid, uint _patchno, uint _currentowner, uint _fromowner, uint _fullamount, uint _remainamount, uint _transdate) public {
-        transactions[transactionsCount] = Transaction(transactionsCount,_drugid, _patchno, _currentowner, _fromowner, _fullamount, _remainamount, _transdate);
+    function addTransaction(uint _drugid, uint _patchno, uint _fromowner, uint _toowner, uint _fullamount, uint _remainamount, uint _transdate) public {
+        transactions[transactionsCount] = Transaction(transactionsCount,_drugid, _patchno, _fromowner, _toowner, _fullamount, _remainamount, _transdate);
         transactionsCount++;
     }
 
@@ -33,8 +33,8 @@ contract Transactions{
       uint[]  memory transid = new uint[](transactionsCount);
       uint[]  memory drugid = new uint[](transactionsCount);
       uint[]  memory patchno = new uint[](transactionsCount);
-      uint[]  memory currentowner = new uint[](transactionsCount);
       uint[]  memory fromowner = new uint[](transactionsCount);
+      uint[]  memory toowner = new uint[](transactionsCount);
       uint[]  memory fullamount = new uint[](transactionsCount);
       uint[]  memory remainamount = new uint[](transactionsCount);
       uint[]  memory transdate = new uint[](transactionsCount);
@@ -44,14 +44,14 @@ contract Transactions{
           transid[i] = transaction.TransactionID;
           drugid[i] = transaction.DrugID;
           patchno[i] = transaction.PatchNo;
-          currentowner[i] = transaction.CurrentOwner;
           fromowner[i] = transaction.FromOwner;
+          toowner[i] = transaction.ToOwner;
           fullamount[i] = transaction.FullAmount;
           remainamount[i] = transaction.RemainAmount;
           transdate[i] = transaction.TransactionDate;
       }
 
-      return (transid, drugid, patchno, currentowner, fromowner,fullamount, transdate);
+      return (transid, drugid, patchno, fromowner, toowner,fullamount, transdate);
 
   }
     //return Array of structure
