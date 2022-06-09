@@ -82,7 +82,22 @@ contract CrudApp {
       return countries.length;
    }
 
-//    function getCountries() public view returns (country[] memory allCountries){
-//       return country[];
-//    }
+   function getCountries() public view returns (country[] memory allCountries){
+      // return country;
+      country[] memory CountriesArr = new country[](totalCountries);
+        for (uint i = 0; i < totalCountries; i++) {
+            // country storage stored_country = country[i];
+            // if(compareStrings(countries[i].name , "Karim")){
+            //    CountriesArr.push(countries[i]);
+            // }
+            CountriesArr[i] = countries[i];
+        }
+        return CountriesArr;
+      //   return countries;
+   }
+
+     function getCountries2() public view returns (country[] memory allCountries){
+      // return country;
+         return countries;
+   }
 }

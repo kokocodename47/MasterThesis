@@ -116,6 +116,66 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "getCountries",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "leader",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "population",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct CrudApp.country[]",
+						"name": "allCountries",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getCountries2",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "leader",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "population",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct CrudApp.country[]",
+						"name": "allCountries",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "string",
@@ -252,11 +312,11 @@
 	},
 	"sources": {
 		"contracts/Test.sol": {
-			"keccak256": "0x8dc9f5ad74cdaf2d03a23a44b513edd0949bafb7e36e07a4f3c225e5d2a9fa5f",
+			"keccak256": "0x4a4e09c50bf977b186538d2d26d6455ee75768e8c38c961fdab64c01ad932eb4",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://32992d432375a5b7587893a2248629b05596300983654c6a76c4c3f717d0b819",
-				"dweb:/ipfs/QmRLEAuzSHVezVYkstrWpup7fCLvkjARoRQtxYHXxrYNwR"
+				"bzz-raw://fc80d9461f4b05668f92d77bbaafe1920ec2c4727fc1e711cb49a863789d2579",
+				"dweb:/ipfs/QmUbeAZiMhXXp3asQMUFz9ySxiHBFCqzS8C7hgYBPYtpuP"
 			]
 		}
 	},

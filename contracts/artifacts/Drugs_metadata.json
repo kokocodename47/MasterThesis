@@ -11,33 +11,78 @@
 				"type": "constructor"
 			},
 			{
+				"anonymous": false,
 				"inputs": [
 					{
+						"indexed": false,
 						"internalType": "string",
-						"name": "_regno",
+						"name": "regNo",
 						"type": "string"
 					}
 				],
-				"name": "addDrug",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
+				"name": "CountryDelete",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "regNo",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "leader",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "population",
+						"type": "uint256"
+					}
+				],
+				"name": "CountryEvent",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "regNo",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "leader",
+						"type": "string"
+					}
+				],
+				"name": "LeaderUpdated",
+				"type": "event"
 			},
 			{
 				"inputs": [
 					{
-						"internalType": "uint256",
-						"name": "_drugid",
-						"type": "uint256"
-					},
+						"internalType": "string",
+						"name": "regNo",
+						"type": "string"
+					}
+				],
+				"name": "deleteDrug",
+				"outputs": [
 					{
 						"internalType": "bool",
-						"name": "_status",
+						"name": "success",
 						"type": "bool"
 					}
 				],
-				"name": "changeDrugStatus",
-				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
@@ -52,37 +97,19 @@
 				"name": "drugs",
 				"outputs": [
 					{
-						"internalType": "uint256",
-						"name": "DrugID",
-						"type": "uint256"
-					},
-					{
 						"internalType": "string",
-						"name": "RegNo",
+						"name": "regNo",
 						"type": "string"
 					},
 					{
 						"internalType": "address",
-						"name": "Manufacturer",
+						"name": "manufacturer",
 						"type": "address"
 					},
 					{
 						"internalType": "bool",
-						"name": "IsActive",
+						"name": "isActive",
 						"type": "bool"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "drugsCount",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -91,67 +118,27 @@
 			{
 				"inputs": [
 					{
-						"internalType": "uint256",
-						"name": "_drugid",
-						"type": "uint256"
+						"internalType": "string",
+						"name": "regNo",
+						"type": "string"
 					}
 				],
-				"name": "get",
-				"outputs": [
-					{
-						"components": [
-							{
-								"internalType": "uint256",
-								"name": "DrugID",
-								"type": "uint256"
-							},
-							{
-								"internalType": "string",
-								"name": "RegNo",
-								"type": "string"
-							},
-							{
-								"internalType": "address",
-								"name": "Manufacturer",
-								"type": "address"
-							},
-							{
-								"internalType": "bool",
-								"name": "IsActive",
-								"type": "bool"
-							}
-						],
-						"internalType": "struct Drugs.Drug",
-						"name": "",
-						"type": "tuple"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
 				"name": "getDrug",
 				"outputs": [
 					{
-						"internalType": "uint256[]",
-						"name": "",
-						"type": "uint256[]"
+						"internalType": "string",
+						"name": "_regNo",
+						"type": "string"
 					},
 					{
-						"internalType": "string[]",
-						"name": "",
-						"type": "string[]"
+						"internalType": "address",
+						"name": "manufacturer",
+						"type": "address"
 					},
 					{
-						"internalType": "address[]",
-						"name": "",
-						"type": "address[]"
-					},
-					{
-						"internalType": "bool[]",
-						"name": "",
-						"type": "bool[]"
+						"internalType": "bool",
+						"name": "isActive",
+						"type": "bool"
 					}
 				],
 				"stateMutability": "view",
@@ -159,33 +146,28 @@
 			},
 			{
 				"inputs": [],
-				"name": "getDrugs",
+				"name": "getDrugs2",
 				"outputs": [
 					{
 						"components": [
 							{
-								"internalType": "uint256",
-								"name": "DrugID",
-								"type": "uint256"
-							},
-							{
 								"internalType": "string",
-								"name": "RegNo",
+								"name": "regNo",
 								"type": "string"
 							},
 							{
 								"internalType": "address",
-								"name": "Manufacturer",
+								"name": "manufacturer",
 								"type": "address"
 							},
 							{
 								"internalType": "bool",
-								"name": "IsActive",
+								"name": "isActive",
 								"type": "bool"
 							}
 						],
-						"internalType": "struct Drugs.Drug[]",
-						"name": "",
+						"internalType": "struct Drugs.drug[]",
+						"name": "allDrugs",
 						"type": "tuple[]"
 					}
 				],
@@ -193,37 +175,107 @@
 				"type": "function"
 			},
 			{
-				"inputs": [
+				"inputs": [],
+				"name": "getDrugss",
+				"outputs": [
 					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
+						"components": [
+							{
+								"internalType": "string",
+								"name": "regNo",
+								"type": "string"
+							},
+							{
+								"internalType": "address",
+								"name": "manufacturer",
+								"type": "address"
+							},
+							{
+								"internalType": "bool",
+								"name": "isActive",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct Drugs.drug[]",
+						"name": "allDrugs",
+						"type": "tuple[]"
 					}
 				],
-				"name": "newdrugs",
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "gettotalDrugs",
 				"outputs": [
 					{
 						"internalType": "uint256",
-						"name": "DrugID",
+						"name": "length",
 						"type": "uint256"
-					},
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
 					{
 						"internalType": "string",
-						"name": "RegNo",
+						"name": "regNo",
 						"type": "string"
 					},
 					{
 						"internalType": "address",
-						"name": "Manufacturer",
+						"name": "manufacturer",
 						"type": "address"
-					},
+					}
+				],
+				"name": "insert",
+				"outputs": [
 					{
-						"internalType": "bool",
-						"name": "IsActive",
-						"type": "bool"
+						"internalType": "uint256",
+						"name": "_totalDrugs",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalDrugs",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "regNo",
+						"type": "string"
+					},
+					{
+						"internalType": "bool",
+						"name": "isActive",
+						"type": "bool"
+					}
+				],
+				"name": "updateDrugStatus",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "success",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			}
 		],
@@ -240,7 +292,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/Drugs.sol": "Drugs"
+			"contracts/NewDrugs.sol": "Drugs"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -254,12 +306,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/Drugs.sol": {
-			"keccak256": "0x9648f759824e4a3eeb4cb9f0e61a9cc440c00d7e47527d7e94cb994978ac65e1",
+		"contracts/NewDrugs.sol": {
+			"keccak256": "0x2d5f7b619037731195f876661721af6270fd41ca8d38ae513ccc5f3806acab76",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://443bce4c976cc990a86bc3b68e58962f5b980f5f15b5a01a6ab8bc249c48ca0f",
-				"dweb:/ipfs/QmdjTjENoKV9i2Ark8HXSpDpmXcrKpVtnF89TXvAAqExnE"
+				"bzz-raw://0f9703e71538c97ae55f585b7d919fb5100dde39db0daf0cf86aa1f87e6c528c",
+				"dweb:/ipfs/Qmb1UzSFs4LDRy9VHsNvcmXrhhBKvMt8cQoekgKUJoiQSz"
 			]
 		}
 	},

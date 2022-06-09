@@ -1,0 +1,132 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "int256",
+						"name": "val",
+						"type": "int256"
+					}
+				],
+				"name": "addTicket",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "success",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "int256",
+						"name": "val",
+						"type": "int256"
+					}
+				],
+				"name": "findTickets",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "int256",
+								"name": "val",
+								"type": "int256"
+							}
+						],
+						"internalType": "struct Tickets.Ticket[]",
+						"name": "filteredTickets",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "getTicket",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "int256",
+								"name": "val",
+								"type": "int256"
+							}
+						],
+						"internalType": "struct Tickets.Ticket",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Test2.sol": "Tickets"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Test2.sol": {
+			"keccak256": "0x8f8dae21ba9cfbfb32294aa4ba3b7356c02efeefdfdddbead5fea4348ce93a99",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://daf7a36462001677ebd5910d4770016bc0380be659e6606dd3ba9f29ad952abe",
+				"dweb:/ipfs/QmdYwLkzfCiihdoD8wCku7CjcN7VDJi1jw4FMy3LHB24QJ"
+			]
+		}
+	},
+	"version": 1
+}
