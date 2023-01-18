@@ -1,0 +1,101 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_Manufaturer",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "_DrugID",
+						"type": "string"
+					}
+				],
+				"name": "AddDrugToManufacturer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_Manufaturer",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_DrugIDX",
+						"type": "uint256"
+					}
+				],
+				"name": "DeleteDrugToManufacturer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_Manufaturer",
+						"type": "address"
+					}
+				],
+				"name": "ReadDrugsManufacturers",
+				"outputs": [
+					{
+						"internalType": "string[]",
+						"name": "",
+						"type": "string[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/StudyTest.sol": "study"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/StudyTest.sol": {
+			"keccak256": "0xbc8cae93b92c3e05af09951a2e358193c8fad345e9e9112d814301d45bbf6210",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://da4998c8f8082d900a8b5ab5b740cb5c980e6db5a170fec9e965b3fc486cf367",
+				"dweb:/ipfs/QmYqUZ8GQhj5zjKc6Jzn12hMP1aRKqQwPBuxZkNcy8SfdU"
+			]
+		}
+	},
+	"version": 1
+}
