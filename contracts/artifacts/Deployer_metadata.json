@@ -1,0 +1,359 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_regno",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_drugname",
+						"type": "string"
+					}
+				],
+				"name": "CreateDrug",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_id",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_username",
+						"type": "string"
+					},
+					{
+						"internalType": "enum Utils.UserRoles",
+						"name": "_userrole",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_lat",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_long",
+						"type": "uint256"
+					}
+				],
+				"name": "CreateUser",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "enum Utils.UserRoles",
+						"name": "_role",
+						"type": "uint8"
+					}
+				],
+				"name": "GetUsersByType",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "UserName",
+								"type": "string"
+							},
+							{
+								"internalType": "enum Utils.UserRoles",
+								"name": "UserRole",
+								"type": "uint8"
+							},
+							{
+								"internalType": "enum Utils.Statuses",
+								"name": "UserStatus",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint256",
+								"name": "Latitude",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "Longitude",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "UserAddress",
+								"type": "address"
+							}
+						],
+						"internalType": "struct Utils.User[]",
+						"name": "filteredUsers",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "Owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_regno",
+						"type": "string"
+					}
+				],
+				"name": "ReadDrug",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "DrugName",
+								"type": "string"
+							},
+							{
+								"internalType": "address",
+								"name": "Manufacturer",
+								"type": "address"
+							},
+							{
+								"internalType": "enum Utils.Statuses",
+								"name": "DrugStatus",
+								"type": "uint8"
+							}
+						],
+						"internalType": "struct Utils.Drug",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_id",
+						"type": "string"
+					}
+				],
+				"name": "ReadUser",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "UserName",
+								"type": "string"
+							},
+							{
+								"internalType": "enum Utils.UserRoles",
+								"name": "UserRole",
+								"type": "uint8"
+							},
+							{
+								"internalType": "enum Utils.Statuses",
+								"name": "UserStatus",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint256",
+								"name": "Latitude",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "Longitude",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "UserAddress",
+								"type": "address"
+							}
+						],
+						"internalType": "struct Utils.User",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_regno",
+						"type": "string"
+					},
+					{
+						"internalType": "enum Utils.Statuses",
+						"name": "_status",
+						"type": "uint8"
+					}
+				],
+				"name": "SetDrugStatus",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_regno",
+						"type": "string"
+					}
+				],
+				"name": "SetDrugStatus",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_id",
+						"type": "string"
+					},
+					{
+						"internalType": "enum Utils.Statuses",
+						"name": "_status",
+						"type": "uint8"
+					}
+				],
+				"name": "SetUserStatus",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Deployer.sol": "Deployer"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Deployer.sol": {
+			"keccak256": "0xc2043cd7251ad51a6f73c9e206f6a190e6dabbb416e495e5d82c1c84c992dcf2",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://eff7f19a2140219f05158061d0fafef5ffa68af6b7a2bb12938a3d20fadf6960",
+				"dweb:/ipfs/QmbScJLQPYV9ZVaf5d2rpb8AwHzrimEQyf2oWydyo2rYNF"
+			]
+		},
+		"contracts/Drugs.sol": {
+			"keccak256": "0xdc74ad0b056b7795f616a39b945e9ac19a8faf129469dd9d2e0efda91a958f44",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://099698a2c47bf55d92eb1903d5dea0e4446caeb3745cf5f91b5a0b2f0080bac0",
+				"dweb:/ipfs/QmaYqQSX37XLoaMvwppdjTuZg8Y47SdGkS5zbjKXqvkzND"
+			]
+		},
+		"contracts/Regulator.sol": {
+			"keccak256": "0x82d7fe3fa53153503c714137ecc57bb19a24f0cc605beffe76f064df1a0f0b1b",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://d2ba31622be6feb1bb0250f3b3d3647552610301dbb0649278b512172e05b767",
+				"dweb:/ipfs/QmTXDQSoe3MgPvfd5FCYCzDYnv3p98RuqZhgiEVqeceLP4"
+			]
+		},
+		"contracts/Users.sol": {
+			"keccak256": "0xef9c96aa3e87fbefa66fa42fb68290f449232e2c028780c8567dbbe811541723",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://e9dd62d4d9953e9431d9cf5e94eb43613a77cf6de902ba4d701286d89ad0f950",
+				"dweb:/ipfs/QmX23v9nK9iBmLmJ4StRC5pFEUr2mGkJPT9nTJgt2VMRRg"
+			]
+		},
+		"contracts/Utils.sol": {
+			"keccak256": "0xeddc8b0f16beab26e9330e0b83f23f409fe9d329423266f59c2f815d4ae7fd5f",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://1dd1608aca50017c49fc33791f0aea2378bb7b4d41ed2828c2b99f4ab7ef5c3c",
+				"dweb:/ipfs/QmScuVSGHMMU8EG9aj8XZ6Aumpu2owSBrk4gTT82DtPKVV"
+			]
+		}
+	},
+	"version": 1
+}

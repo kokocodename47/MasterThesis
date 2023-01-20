@@ -1,0 +1,53 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/PtachsTransactions.sol": "PatchsTransactions"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/PtachsTransactions.sol": {
+			"keccak256": "0x4336e04721e39b941fcbe92dde92bef16760c760d4f4229342ce61848dd2c7bf",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://15cd6c6df9cc5a493bc5e61ad3208ddf119dfa2d5b993753097a0d7a0584a945",
+				"dweb:/ipfs/Qme7uW5hNH4RdxUsxSuf2jz2PZUvj7c2NqxMrujPQFpB73"
+			]
+		},
+		"contracts/Utils.sol": {
+			"keccak256": "0x0f4cd3297d484651cc194432f3b9ffcfcdbe5481a8309db36a2bf448fb1601d3",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://9bb38d976f066a9391cbd5e1d803b84691d4229dda5357110c0e8c62ace174fe",
+				"dweb:/ipfs/QmYxcvMrPa1NqZsZoastJkszNucmXjAbGR37msZT4RyXWM"
+			]
+		}
+	},
+	"version": 1
+}

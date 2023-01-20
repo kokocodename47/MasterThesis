@@ -9,11 +9,16 @@
 				"inputs": [
 					{
 						"internalType": "string",
+						"name": "_id",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
 						"name": "_username",
 						"type": "string"
 					},
 					{
-						"internalType": "enum Users.UserRoles",
+						"internalType": "enum Utils.UserRoles",
 						"name": "_userrole",
 						"type": "uint8"
 					},
@@ -37,6 +42,42 @@
 					}
 				],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_regno",
+						"type": "string"
+					}
+				],
+				"name": "ReadDrug",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "DrugName",
+								"type": "string"
+							},
+							{
+								"internalType": "address",
+								"name": "Manufacturer",
+								"type": "address"
+							},
+							{
+								"internalType": "enum Utils.Statuses",
+								"name": "DrugStatus",
+								"type": "uint8"
+							}
+						],
+						"internalType": "struct Utils.Drug",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			}
 		],
@@ -68,11 +109,19 @@
 	},
 	"sources": {
 		"contracts/Users.sol": {
-			"keccak256": "0x215aee370f884912247909b0abb0ec652de6d1c7438fb8f129184564dbfc2cf3",
+			"keccak256": "0xef9c96aa3e87fbefa66fa42fb68290f449232e2c028780c8567dbbe811541723",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://4a689e6cc864164700c25912b627b1189729f1c22f8bd2cb47bc92c3856a611b",
-				"dweb:/ipfs/QmZxcSEQezQrRrZGLz27miJa8DFDxeRRYNYjqanJoM76v1"
+				"bzz-raw://e9dd62d4d9953e9431d9cf5e94eb43613a77cf6de902ba4d701286d89ad0f950",
+				"dweb:/ipfs/QmX23v9nK9iBmLmJ4StRC5pFEUr2mGkJPT9nTJgt2VMRRg"
+			]
+		},
+		"contracts/Utils.sol": {
+			"keccak256": "0xeddc8b0f16beab26e9330e0b83f23f409fe9d329423266f59c2f815d4ae7fd5f",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://1dd1608aca50017c49fc33791f0aea2378bb7b4d41ed2828c2b99f4ab7ef5c3c",
+				"dweb:/ipfs/QmScuVSGHMMU8EG9aj8XZ6Aumpu2owSBrk4gTT82DtPKVV"
 			]
 		}
 	},

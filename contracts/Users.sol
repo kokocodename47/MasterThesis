@@ -1,44 +1,32 @@
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity ^0.8.0;
 pragma experimental ABIEncoderV2;
-
-contract Users{
-    enum UserRoles {
-        Mnufacturer,
-        Transporter,
-        Wholesaler,
-        Hospital,
-        Pharmacy,
-        Physician,
-        Patient
-    }
-    struct User {       
-        string UserName;
-        UserRoles UserRole;
-        bool IsActive;
-        uint256 Latitude;
-        uint256 Longitude;
-    }
-
-    mapping(address => User) UserAddressMapping;
-    address[] UsersAddresses;
+import "./Utils.sol";
+contract Users is Utils {
+    
     function CreateUser(
+        string memory _id,
         string memory _username,
         UserRoles _userrole,
         uint256 _lat,
         uint256 _long
     ) public returns (bool) {
-        if(){
-            
+        Statuses _activeUser;
+        if(_userrole == UserRoles.Physician || _userrole == UserRoles.Patient){
+            _activeUser = Statuses.Active;
         }
-        UserAddressMapping[msg.sender] = User(
+        else{
+            _activeUser = Statuses.New;
+        }
+        UserIDsMapping[_id] = User(
             _username,
             UserRoles(_userrole),
-            true,
+            _activeUser,
             _lat,
-            _long
+            _long,
+            msg.sender
         );
-        UsersAddresses.push(msg.sender);
+        UsersIDs.push(_id);
         return true;
     }
 

@@ -1,0 +1,64 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "DrugOwner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Drugs.sol": "Drug"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Drugs.sol": {
+			"keccak256": "0x3e6634060ffe75e2630290ccc693ffac51057b4ddbdd07265fd5e50aeeb6d56b",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://49e5a568666b640a4b81b3821354d79169d4e2d75fcbd6a9cece4618778cce91",
+				"dweb:/ipfs/QmQD4y6ThdnftjR5k6mhoCdbnPYTbq1kUYi3moapP5MQM1"
+			]
+		}
+	},
+	"version": 1
+}

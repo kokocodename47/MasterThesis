@@ -6,35 +6,6 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [],
-				"stateMutability": "nonpayable",
-				"type": "constructor"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "string",
-						"name": "_regno",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "_drugname",
-						"type": "string"
-					}
-				],
-				"name": "CreateDrug",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
 				"inputs": [
 					{
 						"internalType": "string",
@@ -69,25 +40,6 @@
 				],
 				"stateMutability": "view",
 				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "string",
-						"name": "_regno",
-						"type": "string"
-					}
-				],
-				"name": "SetDrugStatus",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"stateMutability": "nonpayable",
-				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -103,7 +55,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/Drugs.sol": "Drugs"
+			"contracts/Utils.sol": "Utils"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -117,14 +69,6 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/Drugs.sol": {
-			"keccak256": "0xdc74ad0b056b7795f616a39b945e9ac19a8faf129469dd9d2e0efda91a958f44",
-			"license": "GPL-3.0",
-			"urls": [
-				"bzz-raw://099698a2c47bf55d92eb1903d5dea0e4446caeb3745cf5f91b5a0b2f0080bac0",
-				"dweb:/ipfs/QmaYqQSX37XLoaMvwppdjTuZg8Y47SdGkS5zbjKXqvkzND"
-			]
-		},
 		"contracts/Utils.sol": {
 			"keccak256": "0xeddc8b0f16beab26e9330e0b83f23f409fe9d329423266f59c2f815d4ae7fd5f",
 			"license": "GPL-3.0",

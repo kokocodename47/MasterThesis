@@ -1,8 +1,9 @@
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity ^0.8.0;
 pragma experimental ABIEncoderV2;
-import "./Users.sol";
-contract Regulator is Users {
+
+import "./Utils.sol";
+contract Regulator is Utils {
     
     address public Owner;
     
@@ -14,17 +15,17 @@ contract Regulator is Users {
         require(Owner == msg.sender);
         _;
     }
-
-    function ReadUser(address _address) public view returns (User memory) {
-        return UserAddressMapping[_address];
+    //Users 
+    function ReadUser(string memory _id) public view returns (User memory) {
+        return UserIDsMapping[_id];
     }
 
-    function SetUserStatus(address _address, bool _status)
+    function SetUserStatus(string memory _id, Statuses _status)
         public
         onlyOwner 
         returns (bool)
     {
-        UserAddressMapping[_address].IsActive = _status;
+        UserIDsMapping[_id].UserStatus = _status;
         return true;
     }
  
@@ -33,12 +34,12 @@ contract Regulator is Users {
         view
         returns (User[] memory filteredUsers)
     {
-        uint256 usersCount = UsersAddresses.length;
+        uint256 usersCount = UsersIDs.length;
         User[] memory usersTemp = new User[](usersCount);
         uint256 count;
         for (uint256 i = 0; i < usersCount; i++) {
-            if (UserAddressMapping[UsersAddresses[i]].UserRole == _role) {
-                usersTemp[count] = UserAddressMapping[UsersAddresses[i]];
+            if (UserIDsMapping[UsersIDs[i]].UserRole == _role) {
+                usersTemp[count] = UserIDsMapping[UsersIDs[i]];
                 count += 1;
             }
         }
@@ -47,5 +48,15 @@ contract Regulator is Users {
         for (uint256 i = 0; i < count; i++) {
             filteredUsers[i] = usersTemp[i];
         }
+    }
+    
+
+    function SetDrugStatus(string memory _regno, Statuses _status)
+        public
+        onlyOwner 
+        returns (bool)
+    {
+        DrugRegNoMapping[_regno].DrugStatus = _status;
+        return true;
     }
 }
