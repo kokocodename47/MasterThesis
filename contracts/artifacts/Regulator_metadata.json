@@ -1,0 +1,222 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_username",
+						"type": "string"
+					},
+					{
+						"internalType": "enum Users.UserRoles",
+						"name": "_userrole",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_lat",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_long",
+						"type": "uint256"
+					}
+				],
+				"name": "CreateUser",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "enum Users.UserRoles",
+						"name": "_role",
+						"type": "uint8"
+					}
+				],
+				"name": "GetUsersByType",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "UserName",
+								"type": "string"
+							},
+							{
+								"internalType": "enum Users.UserRoles",
+								"name": "UserRole",
+								"type": "uint8"
+							},
+							{
+								"internalType": "bool",
+								"name": "IsActive",
+								"type": "bool"
+							},
+							{
+								"internalType": "uint256",
+								"name": "Latitude",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "Longitude",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct Users.User[]",
+						"name": "filteredUsers",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "Owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_address",
+						"type": "address"
+					}
+				],
+				"name": "ReadUser",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "UserName",
+								"type": "string"
+							},
+							{
+								"internalType": "enum Users.UserRoles",
+								"name": "UserRole",
+								"type": "uint8"
+							},
+							{
+								"internalType": "bool",
+								"name": "IsActive",
+								"type": "bool"
+							},
+							{
+								"internalType": "uint256",
+								"name": "Latitude",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "Longitude",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct Users.User",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_address",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "_status",
+						"type": "bool"
+					}
+				],
+				"name": "SetUserStatus",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Regulator.sol": "Regulator"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Regulator.sol": {
+			"keccak256": "0x09bf08f149d603ca3dae183472a82e0ee242061e8f7631f2c06ce098e1abe67c",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://fcb2447316f0ae3b03769a542d65c0b10022b05b59ee903a202696cccbb2f878",
+				"dweb:/ipfs/QmS9bfbWR3MuioCJupmJkGARo2bmkq4ZCCUwsYE8xo6yxN"
+			]
+		},
+		"contracts/Users.sol": {
+			"keccak256": "0x215aee370f884912247909b0abb0ec652de6d1c7438fb8f129184564dbfc2cf3",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://4a689e6cc864164700c25912b627b1189729f1c22f8bd2cb47bc92c3856a611b",
+				"dweb:/ipfs/QmZxcSEQezQrRrZGLz27miJa8DFDxeRRYNYjqanJoM76v1"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,80 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_username",
+						"type": "string"
+					},
+					{
+						"internalType": "enum Users.UserRoles",
+						"name": "_userrole",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_lat",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_long",
+						"type": "uint256"
+					}
+				],
+				"name": "CreateUser",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Users.sol": "Users"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Users.sol": {
+			"keccak256": "0x215aee370f884912247909b0abb0ec652de6d1c7438fb8f129184564dbfc2cf3",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://4a689e6cc864164700c25912b627b1189729f1c22f8bd2cb47bc92c3856a611b",
+				"dweb:/ipfs/QmZxcSEQezQrRrZGLz27miJa8DFDxeRRYNYjqanJoM76v1"
+			]
+		}
+	},
+	"version": 1
+}

@@ -26,6 +26,108 @@
 			{
 				"inputs": [
 					{
+						"internalType": "string",
+						"name": "_patch",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_drugid",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "_toaddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_txdate",
+						"type": "string"
+					}
+				],
+				"name": "CreatePatch",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_username",
+						"type": "string"
+					},
+					{
+						"internalType": "enum Regulator.UserRoles",
+						"name": "_userrole",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_lat",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_long",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_address",
+						"type": "address"
+					}
+				],
+				"name": "CreateUser",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_index",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "_status",
+						"type": "bool"
+					}
+				],
+				"name": "DeActivateUser",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "address",
 						"name": "_Manufaturer",
 						"type": "address"
@@ -34,11 +136,67 @@
 						"internalType": "uint256",
 						"name": "_DrugIDX",
 						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "_isActive",
+						"type": "bool"
 					}
 				],
-				"name": "DeleteDrugToManufacturer",
+				"name": "DeactivateDrug",
 				"outputs": [],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "enum Regulator.UserRoles",
+						"name": "_role",
+						"type": "uint8"
+					}
+				],
+				"name": "GetUsersByType",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "UserName",
+								"type": "string"
+							},
+							{
+								"internalType": "enum Regulator.UserRoles",
+								"name": "UserRole",
+								"type": "uint8"
+							},
+							{
+								"internalType": "bool",
+								"name": "IsActive",
+								"type": "bool"
+							},
+							{
+								"internalType": "uint256",
+								"name": "Latitude",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "Longitude",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "UserAddress",
+								"type": "address"
+							}
+						],
+						"internalType": "struct Regulator.User[]",
+						"name": "filteredUsers",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -52,9 +210,72 @@
 				"name": "ReadDrugsManufacturers",
 				"outputs": [
 					{
-						"internalType": "string[]",
+						"components": [
+							{
+								"internalType": "string",
+								"name": "DrugID",
+								"type": "string"
+							},
+							{
+								"internalType": "bool",
+								"name": "IsActive",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct study.Drugs[]",
 						"name": "",
-						"type": "string[]"
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_index",
+						"type": "uint256"
+					}
+				],
+				"name": "ReadUser",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "UserName",
+								"type": "string"
+							},
+							{
+								"internalType": "enum Regulator.UserRoles",
+								"name": "UserRole",
+								"type": "uint8"
+							},
+							{
+								"internalType": "bool",
+								"name": "IsActive",
+								"type": "bool"
+							},
+							{
+								"internalType": "uint256",
+								"name": "Latitude",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "Longitude",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "UserAddress",
+								"type": "address"
+							}
+						],
+						"internalType": "struct Regulator.User",
+						"name": "",
+						"type": "tuple"
 					}
 				],
 				"stateMutability": "view",
@@ -88,12 +309,20 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/StudyTest.sol": {
-			"keccak256": "0xbc8cae93b92c3e05af09951a2e358193c8fad345e9e9112d814301d45bbf6210",
+		"contracts/Regulator.sol": {
+			"keccak256": "0x529026b8feafc13b68d6efccafce8cd918711be2f8266e27b5de778625c55986",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://da4998c8f8082d900a8b5ab5b740cb5c980e6db5a170fec9e965b3fc486cf367",
-				"dweb:/ipfs/QmYqUZ8GQhj5zjKc6Jzn12hMP1aRKqQwPBuxZkNcy8SfdU"
+				"bzz-raw://15fb2c68aa1fcaf0989ea738d9342b631d5c34631873a3951f9c5dce2262e490",
+				"dweb:/ipfs/QmZsXPEcc3DPq2tQdXGG67L5PLu5pbYdfj1kMbKpMYdkYZ"
+			]
+		},
+		"contracts/StudyTest.sol": {
+			"keccak256": "0xbdf4846079143282fc648a87724937cfc9de5734a50ce062aa8d4f3f16326e17",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://020b73198adee442e96d46e7d4292b3a0de259a452dff609807b4ce3e651ae48",
+				"dweb:/ipfs/Qma3UwB9TVv2EakYu8VSgAbPHmpYqXaR2DudcBCJt7itG5"
 			]
 		}
 	},
