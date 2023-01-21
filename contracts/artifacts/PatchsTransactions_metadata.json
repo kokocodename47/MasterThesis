@@ -4,7 +4,187 @@
 	},
 	"language": "Solidity",
 	"output": {
-		"abi": [],
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_drugregno",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_patchno",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "CreatePatch",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_partneraddress",
+						"type": "address"
+					}
+				],
+				"name": "GetUserByAddress",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "UserName",
+								"type": "string"
+							},
+							{
+								"internalType": "enum Utils.UserRoles",
+								"name": "UserRole",
+								"type": "uint8"
+							},
+							{
+								"internalType": "enum Utils.Statuses",
+								"name": "UserStatus",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint256",
+								"name": "Latitude",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "Longitude",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "UserAddress",
+								"type": "address"
+							}
+						],
+						"internalType": "struct Utils.User",
+						"name": "filteredUsers",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_partneraddress",
+						"type": "address"
+					}
+				],
+				"name": "GetUserIDByAddress",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "PatchTrannsactions",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "DrugRegNo",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "PatchNo",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "LineNo",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "FromID",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "ToID",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "Amount",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_regno",
+						"type": "string"
+					}
+				],
+				"name": "ReadDrug",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "DrugName",
+								"type": "string"
+							},
+							{
+								"internalType": "address",
+								"name": "Manufacturer",
+								"type": "address"
+							},
+							{
+								"internalType": "enum Utils.Statuses",
+								"name": "DrugStatus",
+								"type": "uint8"
+							}
+						],
+						"internalType": "struct Utils.Drug",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
 		"devdoc": {
 			"kind": "dev",
 			"methods": {},
@@ -33,19 +213,19 @@
 	},
 	"sources": {
 		"contracts/PtachsTransactions.sol": {
-			"keccak256": "0x4336e04721e39b941fcbe92dde92bef16760c760d4f4229342ce61848dd2c7bf",
+			"keccak256": "0xb8adbe9553c22881e83dcaef6883a8c1760ee9198dda66013351c8164f0f2708",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://15cd6c6df9cc5a493bc5e61ad3208ddf119dfa2d5b993753097a0d7a0584a945",
-				"dweb:/ipfs/Qme7uW5hNH4RdxUsxSuf2jz2PZUvj7c2NqxMrujPQFpB73"
+				"bzz-raw://35b9aba0ada1d386b254e484b01952dbe5649bf514ca9889b6cfa9f35cbf06bb",
+				"dweb:/ipfs/QmegMi5zT1wD94LPbL3NDmDVNY8oG9L3JDcBGYFKBvdDHW"
 			]
 		},
 		"contracts/Utils.sol": {
-			"keccak256": "0x0f4cd3297d484651cc194432f3b9ffcfcdbe5481a8309db36a2bf448fb1601d3",
+			"keccak256": "0x108eca3ebe47d720579279b3e751acda13fd5e792fd84b37ba963d6290583af7",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://9bb38d976f066a9391cbd5e1d803b84691d4229dda5357110c0e8c62ace174fe",
-				"dweb:/ipfs/QmYxcvMrPa1NqZsZoastJkszNucmXjAbGR37msZT4RyXWM"
+				"bzz-raw://1f6ff849839b79e1dae888a672712c431bb7cf7163ad2d859693b6af99b127c9",
+				"dweb:/ipfs/QmQLuArWTbr7dQV5eRHBtR6z8XDz96c9gdmWeqor6ZSQ1N"
 			]
 		}
 	},

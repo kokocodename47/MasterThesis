@@ -29,6 +29,7 @@ contract Utils{
     }
     mapping(string => User) UserIDsMapping;
     string[] UsersIDs;
+    
     //Drugs
     struct Drug {
         string DrugName;
