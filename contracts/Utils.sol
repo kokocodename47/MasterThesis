@@ -2,13 +2,23 @@
 pragma solidity ^0.8.0;
 pragma experimental ABIEncoderV2;
 
-contract Utils{
+contract Utils {
     //Shared
-    enum Statuses{
+    enum Statuses {
         New,
         Active,
         Suspended
     }
+
+    function compareStringsbyBytes(string memory s1, string memory s2)
+        public
+        pure
+        returns (bool)
+    {
+        return
+            keccak256(abi.encodePacked(s1)) == keccak256(abi.encodePacked(s2));
+    }
+
     //Users
     enum UserRoles {
         Mnufacturer,
@@ -20,7 +30,7 @@ contract Utils{
         Patient
     }
     struct User {
-        string UserID;       
+        string UserID;
         string UserName;
         UserRoles UserRole;
         Statuses UserStatus;
@@ -30,10 +40,11 @@ contract Utils{
     }
     mapping(address => User) UserAddressMapping;
     address[] UsersAddresses;
+
     function ReadUser(address _address) public view returns (User memory) {
         return UserAddressMapping[_address];
     }
-    
+
     function GetUsersByType(UserRoles _role)
         public
         view
@@ -54,6 +65,7 @@ contract Utils{
             filteredUsers[i] = usersTemp[i];
         }
     }
+
     //Drugs
     struct Drug {
         string DrugName;
@@ -76,4 +88,6 @@ contract Utils{
     function ReadDrug(string memory _regno) public view returns (Drug memory) {
         return DrugRegNoMapping[_regno];
     }
+
+    
 }

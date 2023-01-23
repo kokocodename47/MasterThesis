@@ -64,6 +64,50 @@
 			{
 				"inputs": [
 					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "PatchTrannsactions",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "DrugRegNo",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "PatchNo",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "LineNo",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "FromID",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "ToID",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "Amount",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "string",
 						"name": "_regno",
 						"type": "string"
@@ -92,6 +136,108 @@
 						"internalType": "struct Utils.Drug",
 						"name": "",
 						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_drugno",
+						"type": "string"
+					}
+				],
+				"name": "ReadTransactionsByDrug",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "DrugRegNo",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "PatchNo",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "LineNo",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "FromID",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "ToID",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "Amount",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct Utils.PatchTransaction[]",
+						"name": "UserTransaction",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_useraddress",
+						"type": "address"
+					}
+				],
+				"name": "ReadTransactionsByUser",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "DrugRegNo",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "PatchNo",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "LineNo",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "FromID",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "ToID",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "Amount",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct Utils.PatchTransaction[]",
+						"name": "UserTransaction",
+						"type": "tuple[]"
 					}
 				],
 				"stateMutability": "view",
@@ -152,6 +298,30 @@
 				],
 				"stateMutability": "view",
 				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "s1",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "s2",
+						"type": "string"
+					}
+				],
+				"name": "compareStringsbyBytes",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -182,11 +352,11 @@
 	},
 	"sources": {
 		"contracts/Utils.sol": {
-			"keccak256": "0x7247613fb923aa46955c25c79650409c423348d4ea5b7b9a392256a666d5ddb7",
+			"keccak256": "0x67288318893d80e13ac2e29ffe73a1296c0dfcbddcc93760d039d98d2d16df8a",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://ab8d33624a8f0d7525b41b2bfe643bcf91f52c2b6d1798f5f537baa5653ecec3",
-				"dweb:/ipfs/QmRKcjA4HyBxk7wykiGCVGXKSiFy4dxeDcp9uCTCK439DR"
+				"bzz-raw://91b7cb5fa94f823b6ecf84c8a709659cbad23ccb96f7e8313e7407906e0f28c0",
+				"dweb:/ipfs/QmbQXs5NQArLGjsvwyFv1VpuLHd88FLdH9hKb9p2NXMFZg"
 			]
 		}
 	},
