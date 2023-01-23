@@ -13,41 +13,7 @@
 			{
 				"inputs": [
 					{
-						"internalType": "string",
-						"name": "_username",
-						"type": "string"
-					},
-					{
-						"internalType": "enum Users.UserRoles",
-						"name": "_userrole",
-						"type": "uint8"
-					},
-					{
-						"internalType": "uint256",
-						"name": "_lat",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "_long",
-						"type": "uint256"
-					}
-				],
-				"name": "CreateUser",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "enum Users.UserRoles",
+						"internalType": "enum Utils.UserRoles",
 						"name": "_role",
 						"type": "uint8"
 					}
@@ -58,18 +24,23 @@
 						"components": [
 							{
 								"internalType": "string",
+								"name": "UserID",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
 								"name": "UserName",
 								"type": "string"
 							},
 							{
-								"internalType": "enum Users.UserRoles",
+								"internalType": "enum Utils.UserRoles",
 								"name": "UserRole",
 								"type": "uint8"
 							},
 							{
-								"internalType": "bool",
-								"name": "IsActive",
-								"type": "bool"
+								"internalType": "enum Utils.Statuses",
+								"name": "UserStatus",
+								"type": "uint8"
 							},
 							{
 								"internalType": "uint256",
@@ -80,9 +51,14 @@
 								"internalType": "uint256",
 								"name": "Longitude",
 								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "UserAddress",
+								"type": "address"
 							}
 						],
-						"internalType": "struct Users.User[]",
+						"internalType": "struct Utils.User[]",
 						"name": "filteredUsers",
 						"type": "tuple[]"
 					}
@@ -106,42 +82,32 @@
 			{
 				"inputs": [
 					{
-						"internalType": "address",
-						"name": "_address",
-						"type": "address"
+						"internalType": "string",
+						"name": "_regno",
+						"type": "string"
 					}
 				],
-				"name": "ReadUser",
+				"name": "ReadDrug",
 				"outputs": [
 					{
 						"components": [
 							{
 								"internalType": "string",
-								"name": "UserName",
+								"name": "DrugName",
 								"type": "string"
 							},
 							{
-								"internalType": "enum Users.UserRoles",
-								"name": "UserRole",
+								"internalType": "address",
+								"name": "Manufacturer",
+								"type": "address"
+							},
+							{
+								"internalType": "enum Utils.Statuses",
+								"name": "DrugStatus",
 								"type": "uint8"
-							},
-							{
-								"internalType": "bool",
-								"name": "IsActive",
-								"type": "bool"
-							},
-							{
-								"internalType": "uint256",
-								"name": "Latitude",
-								"type": "uint256"
-							},
-							{
-								"internalType": "uint256",
-								"name": "Longitude",
-								"type": "uint256"
 							}
 						],
-						"internalType": "struct Users.User",
+						"internalType": "struct Utils.Drug",
 						"name": "",
 						"type": "tuple"
 					}
@@ -155,11 +121,91 @@
 						"internalType": "address",
 						"name": "_address",
 						"type": "address"
+					}
+				],
+				"name": "ReadUser",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "UserID",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "UserName",
+								"type": "string"
+							},
+							{
+								"internalType": "enum Utils.UserRoles",
+								"name": "UserRole",
+								"type": "uint8"
+							},
+							{
+								"internalType": "enum Utils.Statuses",
+								"name": "UserStatus",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint256",
+								"name": "Latitude",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "Longitude",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "UserAddress",
+								"type": "address"
+							}
+						],
+						"internalType": "struct Utils.User",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_regno",
+						"type": "string"
 					},
 					{
-						"internalType": "bool",
+						"internalType": "enum Utils.Statuses",
 						"name": "_status",
+						"type": "uint8"
+					}
+				],
+				"name": "SetDrugStatus",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
 						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_address",
+						"type": "address"
+					},
+					{
+						"internalType": "enum Utils.Statuses",
+						"name": "_status",
+						"type": "uint8"
 					}
 				],
 				"name": "SetUserStatus",
@@ -202,19 +248,19 @@
 	},
 	"sources": {
 		"contracts/Regulator.sol": {
-			"keccak256": "0x09bf08f149d603ca3dae183472a82e0ee242061e8f7631f2c06ce098e1abe67c",
+			"keccak256": "0x096b1113512edd3b87a19fb53eb4d2474d9ca6b77858ec6e006d9b4a6c0229b9",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://fcb2447316f0ae3b03769a542d65c0b10022b05b59ee903a202696cccbb2f878",
-				"dweb:/ipfs/QmS9bfbWR3MuioCJupmJkGARo2bmkq4ZCCUwsYE8xo6yxN"
+				"bzz-raw://890e344f59364e86db588c3c65b4f69e879a536763fae02d7ebb303846ac0303",
+				"dweb:/ipfs/QmPFEuKwsRDeMm6VTpGhWhswm982qFU4o2579AiaZ99L8E"
 			]
 		},
-		"contracts/Users.sol": {
-			"keccak256": "0x215aee370f884912247909b0abb0ec652de6d1c7438fb8f129184564dbfc2cf3",
+		"contracts/Utils.sol": {
+			"keccak256": "0x3aae0795fe6bf9ee96ccef46d64ac0c0ed12b397a92ab71b9c84e48711c30b0b",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://4a689e6cc864164700c25912b627b1189729f1c22f8bd2cb47bc92c3856a611b",
-				"dweb:/ipfs/QmZxcSEQezQrRrZGLz27miJa8DFDxeRRYNYjqanJoM76v1"
+				"bzz-raw://bc552ad8b215ea77c246f02adc1981144ea1d45a57bf878e29cb53b2228ffab3",
+				"dweb:/ipfs/QmQbc88QtY7AeniD5cecXNXHxeGXbFnRjwgSaZ8acwmBeu"
 			]
 		}
 	},

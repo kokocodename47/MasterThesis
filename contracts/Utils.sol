@@ -19,7 +19,8 @@ contract Utils{
         Physician,
         Patient
     }
-    struct User {       
+    struct User {
+        string UserID;       
         string UserName;
         UserRoles UserRole;
         Statuses UserStatus;
@@ -27,9 +28,32 @@ contract Utils{
         uint256 Longitude;
         address UserAddress;
     }
-    mapping(string => User) UserIDsMapping;
-    string[] UsersIDs;
+    mapping(address => User) UserAddressMapping;
+    address[] UsersAddresses;
+    function ReadUser(address _address) public view returns (User memory) {
+        return UserAddressMapping[_address];
+    }
     
+    function GetUsersByType(UserRoles _role)
+        public
+        view
+        returns (User[] memory filteredUsers)
+    {
+        uint256 usersCount = UsersAddresses.length;
+        User[] memory usersTemp = new User[](usersCount);
+        uint256 count;
+        for (uint256 i = 0; i < usersCount; i++) {
+            if (UserAddressMapping[UsersAddresses[i]].UserRole == _role) {
+                usersTemp[count] = UserAddressMapping[UsersAddresses[i]];
+                count += 1;
+            }
+        }
+
+        filteredUsers = new User[](count);
+        for (uint256 i = 0; i < count; i++) {
+            filteredUsers[i] = usersTemp[i];
+        }
+    }
     //Drugs
     struct Drug {
         string DrugName;

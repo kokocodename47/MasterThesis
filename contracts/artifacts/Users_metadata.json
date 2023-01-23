@@ -109,19 +109,19 @@
 	},
 	"sources": {
 		"contracts/Users.sol": {
-			"keccak256": "0xef9c96aa3e87fbefa66fa42fb68290f449232e2c028780c8567dbbe811541723",
+			"keccak256": "0xe85812d49655dc08a625084ebca96cd24bd0ab135e36bb9d2a773b4fdcc2264b",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://e9dd62d4d9953e9431d9cf5e94eb43613a77cf6de902ba4d701286d89ad0f950",
-				"dweb:/ipfs/QmX23v9nK9iBmLmJ4StRC5pFEUr2mGkJPT9nTJgt2VMRRg"
+				"bzz-raw://6f12fc5d11e000564afb57fb727a505ace245aa70e74d083928b265436b9fd21",
+				"dweb:/ipfs/QmStx1UJYrvxSAVj7fip21ZGSEc4cgpyqU8YdszLMvZ8Fh"
 			]
 		},
 		"contracts/Utils.sol": {
-			"keccak256": "0xeddc8b0f16beab26e9330e0b83f23f409fe9d329423266f59c2f815d4ae7fd5f",
+			"keccak256": "0x20db748f7a528706b9bee6c8f786242313f4d9cb1f8257a2c1b00f28ca85b74d",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://1dd1608aca50017c49fc33791f0aea2378bb7b4d41ed2828c2b99f4ab7ef5c3c",
-				"dweb:/ipfs/QmScuVSGHMMU8EG9aj8XZ6Aumpu2owSBrk4gTT82DtPKVV"
+				"bzz-raw://ab030c0c69530909626d8a5df5c1dba90db3ec46348d5c048c334b540244cd6c",
+				"dweb:/ipfs/QmZCuYwpcbdEys9s6hyAo2vYYgmsuT21Y9ygmJK89NoSyP"
 			]
 		}
 	},

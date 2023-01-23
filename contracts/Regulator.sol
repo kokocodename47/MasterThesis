@@ -16,41 +16,17 @@ contract Regulator is Utils {
         _;
     }
     //Users 
-    function ReadUser(string memory _id) public view returns (User memory) {
-        return UserIDsMapping[_id];
-    }
-
-    function SetUserStatus(string memory _id, Statuses _status)
+    function SetUserStatus(address _address, Statuses _status)
         public
         onlyOwner 
         returns (bool)
     {
-        UserIDsMapping[_id].UserStatus = _status;
+        UserAddressMapping[_address].UserStatus = _status;
         return true;
     }
  
-    function GetUsersByType(UserRoles _role)
-        public
-        view
-        returns (User[] memory filteredUsers)
-    {
-        uint256 usersCount = UsersIDs.length;
-        User[] memory usersTemp = new User[](usersCount);
-        uint256 count;
-        for (uint256 i = 0; i < usersCount; i++) {
-            if (UserIDsMapping[UsersIDs[i]].UserRole == _role) {
-                usersTemp[count] = UserIDsMapping[UsersIDs[i]];
-                count += 1;
-            }
-        }
-
-        filteredUsers = new User[](count);
-        for (uint256 i = 0; i < count; i++) {
-            filteredUsers[i] = usersTemp[i];
-        }
-    }
-    
-
+        
+    //Drugs
     function SetDrugStatus(string memory _regno, Statuses _status)
         public
         onlyOwner 

@@ -8,6 +8,62 @@
 			{
 				"inputs": [
 					{
+						"internalType": "enum Utils.UserRoles",
+						"name": "_role",
+						"type": "uint8"
+					}
+				],
+				"name": "GetUsersByType",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "UserID",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "UserName",
+								"type": "string"
+							},
+							{
+								"internalType": "enum Utils.UserRoles",
+								"name": "UserRole",
+								"type": "uint8"
+							},
+							{
+								"internalType": "enum Utils.Statuses",
+								"name": "UserStatus",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint256",
+								"name": "Latitude",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "Longitude",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "UserAddress",
+								"type": "address"
+							}
+						],
+						"internalType": "struct Utils.User[]",
+						"name": "filteredUsers",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "string",
 						"name": "_regno",
 						"type": "string"
@@ -34,6 +90,62 @@
 							}
 						],
 						"internalType": "struct Utils.Drug",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_address",
+						"type": "address"
+					}
+				],
+				"name": "ReadUser",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "UserID",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "UserName",
+								"type": "string"
+							},
+							{
+								"internalType": "enum Utils.UserRoles",
+								"name": "UserRole",
+								"type": "uint8"
+							},
+							{
+								"internalType": "enum Utils.Statuses",
+								"name": "UserStatus",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint256",
+								"name": "Latitude",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "Longitude",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "UserAddress",
+								"type": "address"
+							}
+						],
+						"internalType": "struct Utils.User",
 						"name": "",
 						"type": "tuple"
 					}
@@ -70,11 +182,11 @@
 	},
 	"sources": {
 		"contracts/Utils.sol": {
-			"keccak256": "0xeddc8b0f16beab26e9330e0b83f23f409fe9d329423266f59c2f815d4ae7fd5f",
+			"keccak256": "0x7247613fb923aa46955c25c79650409c423348d4ea5b7b9a392256a666d5ddb7",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://1dd1608aca50017c49fc33791f0aea2378bb7b4d41ed2828c2b99f4ab7ef5c3c",
-				"dweb:/ipfs/QmScuVSGHMMU8EG9aj8XZ6Aumpu2owSBrk4gTT82DtPKVV"
+				"bzz-raw://ab8d33624a8f0d7525b41b2bfe643bcf91f52c2b6d1798f5f537baa5653ecec3",
+				"dweb:/ipfs/QmRKcjA4HyBxk7wykiGCVGXKSiFy4dxeDcp9uCTCK439DR"
 			]
 		}
 	},

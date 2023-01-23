@@ -18,7 +18,8 @@ contract Users is Utils {
         else{
             _activeUser = Statuses.New;
         }
-        UserIDsMapping[_id] = User(
+        UserAddressMapping[msg.sender] = User(
+            _id,
             _username,
             UserRoles(_userrole),
             _activeUser,
@@ -26,7 +27,7 @@ contract Users is Utils {
             _long,
             msg.sender
         );
-        UsersIDs.push(_id);
+        UsersAddresses.push(msg.sender);
         return true;
     }
 
