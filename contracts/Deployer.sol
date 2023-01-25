@@ -5,7 +5,8 @@ pragma experimental ABIEncoderV2;
 import "./Regulator.sol";
 import "./Users.sol";
 import "./Drugs.sol";
+import "./PatchsTransactions.sol";
 
-contract Deployer is Regulator, Users, Drugs {
+contract Deployer is Regulator, Users, Drugs, PatchsTransactions {
     
 }

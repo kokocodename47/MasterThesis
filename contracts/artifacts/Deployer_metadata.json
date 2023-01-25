@@ -33,6 +33,84 @@
 				"inputs": [
 					{
 						"internalType": "string",
+						"name": "_drugregno",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_patchno",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_txdate",
+						"type": "uint256"
+					}
+				],
+				"name": "CreatePatch",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_drugregno",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_patchno",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_toaddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_txdate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_fromaddress",
+						"type": "address"
+					}
+				],
+				"name": "CreateTransaction",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
 						"name": "_id",
 						"type": "string"
 					},
@@ -80,6 +158,11 @@
 				"outputs": [
 					{
 						"components": [
+							{
+								"internalType": "string",
+								"name": "UserID",
+								"type": "string"
+							},
 							{
 								"internalType": "string",
 								"name": "UserName",
@@ -135,6 +218,55 @@
 			{
 				"inputs": [
 					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "PatchTrannsactions",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "DrugRegNo",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "PatchNo",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "LineNo",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "FromID",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "ToID",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "Amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "TransactionDate",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "string",
 						"name": "_regno",
 						"type": "string"
@@ -172,14 +304,258 @@
 				"inputs": [
 					{
 						"internalType": "string",
-						"name": "_id",
+						"name": "_patchno",
 						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_drugno",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "_fromaddress",
+						"type": "address"
+					}
+				],
+				"name": "ReadParentAndSiblingsTransactions",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "DrugRegNo",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "PatchNo",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "LineNo",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "FromID",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "ToID",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "Amount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "TransactionDate",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct Utils.PatchTransaction[]",
+						"name": "UserTransaction",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_drugno",
+						"type": "string"
+					}
+				],
+				"name": "ReadTransactionsByDrug",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "DrugRegNo",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "PatchNo",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "LineNo",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "FromID",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "ToID",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "Amount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "TransactionDate",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct Utils.PatchTransaction[]",
+						"name": "UserTransaction",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_patchno",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_drugno",
+						"type": "string"
+					}
+				],
+				"name": "ReadTransactionsByPatchNo",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "DrugRegNo",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "PatchNo",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "LineNo",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "FromID",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "ToID",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "Amount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "TransactionDate",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct Utils.PatchTransaction[]",
+						"name": "UserTransaction",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_useraddress",
+						"type": "address"
+					}
+				],
+				"name": "ReadTransactionsByUser",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "DrugRegNo",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "PatchNo",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "LineNo",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "FromID",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "ToID",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "Amount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "TransactionDate",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct Utils.PatchTransaction[]",
+						"name": "UserTransaction",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_address",
+						"type": "address"
 					}
 				],
 				"name": "ReadUser",
 				"outputs": [
 					{
 						"components": [
+							{
+								"internalType": "string",
+								"name": "UserID",
+								"type": "string"
+							},
 							{
 								"internalType": "string",
 								"name": "UserName",
@@ -223,6 +599,35 @@
 				"inputs": [
 					{
 						"internalType": "string",
+						"name": "_patchno",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_drugno",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "_fromaddress",
+						"type": "address"
+					}
+				],
+				"name": "ReturnRemainingAmount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "_remainamount",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
 						"name": "_regno",
 						"type": "string"
 					},
@@ -265,9 +670,9 @@
 			{
 				"inputs": [
 					{
-						"internalType": "string",
-						"name": "_id",
-						"type": "string"
+						"internalType": "address",
+						"name": "_address",
+						"type": "address"
 					},
 					{
 						"internalType": "enum Utils.Statuses",
@@ -284,6 +689,30 @@
 					}
 				],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "s1",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "s2",
+						"type": "string"
+					}
+				],
+				"name": "compareStringsbyBytes",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "pure",
 				"type": "function"
 			}
 		],
@@ -315,11 +744,11 @@
 	},
 	"sources": {
 		"contracts/Deployer.sol": {
-			"keccak256": "0xc2043cd7251ad51a6f73c9e206f6a190e6dabbb416e495e5d82c1c84c992dcf2",
+			"keccak256": "0x3a4c8cdf4a2c18e41fe161d58cd02c015a995351d3e4ea88547544ffbcdd9393",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://eff7f19a2140219f05158061d0fafef5ffa68af6b7a2bb12938a3d20fadf6960",
-				"dweb:/ipfs/QmbScJLQPYV9ZVaf5d2rpb8AwHzrimEQyf2oWydyo2rYNF"
+				"bzz-raw://d610fd1e46a7e152376f69adb2742b3ccc88636598f2fa372bed1307ede5d564",
+				"dweb:/ipfs/QmXMjVC5sQebv9tRuSZriDYinKzRByUVWYRA4xDKww6jEV"
 			]
 		},
 		"contracts/Drugs.sol": {
@@ -330,28 +759,36 @@
 				"dweb:/ipfs/QmaYqQSX37XLoaMvwppdjTuZg8Y47SdGkS5zbjKXqvkzND"
 			]
 		},
-		"contracts/Regulator.sol": {
-			"keccak256": "0x82d7fe3fa53153503c714137ecc57bb19a24f0cc605beffe76f064df1a0f0b1b",
+		"contracts/PatchsTransactions.sol": {
+			"keccak256": "0xc0613652a3a515f3f9cac8d10806ec1982a487dd9fa4920962e611d60f612238",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://d2ba31622be6feb1bb0250f3b3d3647552610301dbb0649278b512172e05b767",
-				"dweb:/ipfs/QmTXDQSoe3MgPvfd5FCYCzDYnv3p98RuqZhgiEVqeceLP4"
+				"bzz-raw://bcafed402808f1022915b65966fa91bd29346da139a8448a1783a5544df8bc90",
+				"dweb:/ipfs/QmQXjWvDhT61dx6sou4BdvaDdivXFdT3aiv6Yef1KnW4Y8"
+			]
+		},
+		"contracts/Regulator.sol": {
+			"keccak256": "0x096b1113512edd3b87a19fb53eb4d2474d9ca6b77858ec6e006d9b4a6c0229b9",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://890e344f59364e86db588c3c65b4f69e879a536763fae02d7ebb303846ac0303",
+				"dweb:/ipfs/QmPFEuKwsRDeMm6VTpGhWhswm982qFU4o2579AiaZ99L8E"
 			]
 		},
 		"contracts/Users.sol": {
-			"keccak256": "0xef9c96aa3e87fbefa66fa42fb68290f449232e2c028780c8567dbbe811541723",
+			"keccak256": "0xe85812d49655dc08a625084ebca96cd24bd0ab135e36bb9d2a773b4fdcc2264b",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://e9dd62d4d9953e9431d9cf5e94eb43613a77cf6de902ba4d701286d89ad0f950",
-				"dweb:/ipfs/QmX23v9nK9iBmLmJ4StRC5pFEUr2mGkJPT9nTJgt2VMRRg"
+				"bzz-raw://6f12fc5d11e000564afb57fb727a505ace245aa70e74d083928b265436b9fd21",
+				"dweb:/ipfs/QmStx1UJYrvxSAVj7fip21ZGSEc4cgpyqU8YdszLMvZ8Fh"
 			]
 		},
 		"contracts/Utils.sol": {
-			"keccak256": "0xeddc8b0f16beab26e9330e0b83f23f409fe9d329423266f59c2f815d4ae7fd5f",
+			"keccak256": "0x71e92f5aa84bb7755b43390f9745cf4c64ec7083be4d7e7e0df051267663d690",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://1dd1608aca50017c49fc33791f0aea2378bb7b4d41ed2828c2b99f4ab7ef5c3c",
-				"dweb:/ipfs/QmScuVSGHMMU8EG9aj8XZ6Aumpu2owSBrk4gTT82DtPKVV"
+				"bzz-raw://f5bdf1a2379cd93a702ef33b4e51211d5ed126e8d1177db4867da8a0288099cb",
+				"dweb:/ipfs/QmXiGWHMD1ABvf5McGFFLiaHkRASpTJK7TFj9UH5f9LNku"
 			]
 		}
 	},

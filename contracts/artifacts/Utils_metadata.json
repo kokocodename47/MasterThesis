@@ -100,6 +100,11 @@
 						"internalType": "uint256",
 						"name": "Amount",
 						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "TransactionDate",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -145,6 +150,72 @@
 				"inputs": [
 					{
 						"internalType": "string",
+						"name": "_patchno",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_drugno",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "_fromaddress",
+						"type": "address"
+					}
+				],
+				"name": "ReadParentAndSiblingsTransactions",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "DrugRegNo",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "PatchNo",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "LineNo",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "FromID",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "ToID",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "Amount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "TransactionDate",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct Utils.PatchTransaction[]",
+						"name": "UserTransaction",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
 						"name": "_drugno",
 						"type": "string"
 					}
@@ -181,6 +252,72 @@
 							{
 								"internalType": "uint256",
 								"name": "Amount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "TransactionDate",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct Utils.PatchTransaction[]",
+						"name": "UserTransaction",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_patchno",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_drugno",
+						"type": "string"
+					}
+				],
+				"name": "ReadTransactionsByPatchNo",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "DrugRegNo",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "PatchNo",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "LineNo",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "FromID",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "ToID",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "Amount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "TransactionDate",
 								"type": "uint256"
 							}
 						],
@@ -232,6 +369,11 @@
 							{
 								"internalType": "uint256",
 								"name": "Amount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "TransactionDate",
 								"type": "uint256"
 							}
 						],
@@ -303,6 +445,35 @@
 				"inputs": [
 					{
 						"internalType": "string",
+						"name": "_patchno",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_drugno",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "_fromaddress",
+						"type": "address"
+					}
+				],
+				"name": "ReturnRemainingAmount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "_remainamount",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
 						"name": "s1",
 						"type": "string"
 					},
@@ -352,11 +523,11 @@
 	},
 	"sources": {
 		"contracts/Utils.sol": {
-			"keccak256": "0x67288318893d80e13ac2e29ffe73a1296c0dfcbddcc93760d039d98d2d16df8a",
+			"keccak256": "0x71e92f5aa84bb7755b43390f9745cf4c64ec7083be4d7e7e0df051267663d690",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://91b7cb5fa94f823b6ecf84c8a709659cbad23ccb96f7e8313e7407906e0f28c0",
-				"dweb:/ipfs/QmbQXs5NQArLGjsvwyFv1VpuLHd88FLdH9hKb9p2NXMFZg"
+				"bzz-raw://f5bdf1a2379cd93a702ef33b4e51211d5ed126e8d1177db4867da8a0288099cb",
+				"dweb:/ipfs/QmXiGWHMD1ABvf5McGFFLiaHkRASpTJK7TFj9UH5f9LNku"
 			]
 		}
 	},
