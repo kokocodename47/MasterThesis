@@ -8,5 +8,7 @@ import "./Drugs.sol";
 import "./PatchsTransactions.sol";
 
 contract Deployer is Regulator, Users, Drugs, PatchsTransactions {
-    
+    constructor() {
+        Owner = msg.sender;
+    }
 }

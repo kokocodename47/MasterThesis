@@ -62,6 +62,19 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "Owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "uint256",
@@ -207,6 +220,19 @@
 						"internalType": "struct Utils.PatchTransaction[]",
 						"name": "UserTransaction",
 						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "ReadRoleByUser",
+				"outputs": [
+					{
+						"internalType": "enum Utils.UserRoles",
+						"name": "_userrole",
+						"type": "uint8"
 					}
 				],
 				"stateMutability": "view",
@@ -523,11 +549,11 @@
 	},
 	"sources": {
 		"contracts/Utils.sol": {
-			"keccak256": "0x71e92f5aa84bb7755b43390f9745cf4c64ec7083be4d7e7e0df051267663d690",
+			"keccak256": "0x43193e0af3ee27d2fa3721eb428eee9c4b715893ffc6199bdc052cd2e67efb78",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://f5bdf1a2379cd93a702ef33b4e51211d5ed126e8d1177db4867da8a0288099cb",
-				"dweb:/ipfs/QmXiGWHMD1ABvf5McGFFLiaHkRASpTJK7TFj9UH5f9LNku"
+				"bzz-raw://05455694c196e9586dddca4316873a53ee4f3e740f17488661257669778f5c3f",
+				"dweb:/ipfs/QmYtdBTCPkEiu7WimD83bSeFdmuMWpoUNyqTvoYHwnfZB6"
 			]
 		}
 	},

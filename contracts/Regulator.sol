@@ -5,11 +5,9 @@ pragma experimental ABIEncoderV2;
 import "./Utils.sol";
 contract Regulator is Utils {
     
-    address public Owner;
     
-    constructor() {
-        Owner = msg.sender;
-    }
+    
+    
     
     modifier onlyOwner() {
         require(Owner == msg.sender);

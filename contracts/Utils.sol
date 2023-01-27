@@ -20,14 +20,17 @@ contract Utils {
     }
 
     //Users
+    address public Owner;
     enum UserRoles {
+        Regulator,
         Mnufacturer,
         Transporter,
         Wholesaler,
         Hospital,
         Pharmacy,
         Physician,
-        Patient
+        Patient,
+        Unregistered
     }
     struct User {
         string UserID;
@@ -63,6 +66,21 @@ contract Utils {
         filteredUsers = new User[](count);
         for (uint256 i = 0; i < count; i++) {
             filteredUsers[i] = usersTemp[i];
+        }
+    }
+
+    function ReadRoleByUser()
+        public
+        view
+        returns (UserRoles _userrole)
+    {
+        if (msg.sender == Owner) {
+            _userrole = UserRoles.Regulator;
+        }else if (UserAddressMapping[msg.sender].UserAddress == address(0)){
+            _userrole = UserRoles.Unregistered;
+        } 
+        else {
+            _userrole = UserAddressMapping[msg.sender].UserRole;
         }
     }
 
@@ -219,12 +237,16 @@ contract Utils {
         string memory _patchno,
         string memory _drugno,
         address _fromaddress
-    ) public view returns (uint _remainamount){
-        PatchTransaction[] memory UserTransaction = ReadParentAndSiblingsTransactions(_patchno,_drugno, _fromaddress); 
-        uint mainAmount;
-        uint toAmount;
-        for (uint256 i = 0; i < UserTransaction.length; i++) 
-        {
+    ) public view returns (uint256 _remainamount) {
+        PatchTransaction[]
+            memory UserTransaction = ReadParentAndSiblingsTransactions(
+                _patchno,
+                _drugno,
+                _fromaddress
+            );
+        uint256 mainAmount;
+        uint256 toAmount;
+        for (uint256 i = 0; i < UserTransaction.length; i++) {
             if (UserTransaction[i].ToID == _fromaddress) {
                 mainAmount = UserTransaction[i].Amount;
             } else {
@@ -233,5 +255,4 @@ contract Utils {
         }
         _remainamount = mainAmount - toAmount;
     }
-
 }
