@@ -21,22 +21,19 @@ contract Drugs is Utils{
         DrugRegNoMapping[_regno] = Drug(
             _drugname,
             msg.sender,
-            Statuses.New
+            Statuses.New,
+            _regno
         );
         DrugsRegNos.push(_regno);
         return true;
     }
 
-    function SetDrugStatus(string memory _regno)
+    function SetDrugSuspended(string memory _regno)
         public
         returns (bool)
     {
-        require (ReadDrug(_regno).Manufacturer == msg.sender);
+        require (DrugRegNoMapping[_regno].Manufacturer == msg.sender);
         DrugRegNoMapping[_regno].DrugStatus = Statuses.Suspended;
         return true;
     }
-
-    
-
-
 }

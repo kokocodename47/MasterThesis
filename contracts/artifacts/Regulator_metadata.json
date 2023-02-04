@@ -8,6 +8,91 @@
 			{
 				"inputs": [
 					{
+						"internalType": "string",
+						"name": "_id",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_username",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "_regaddress",
+						"type": "address"
+					}
+				],
+				"name": "CreateRegulator",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "enum Utils.Statuses",
+						"name": "_status",
+						"type": "uint8"
+					}
+				],
+				"name": "GetUsersByStatus",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "UserID",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "UserName",
+								"type": "string"
+							},
+							{
+								"internalType": "enum Utils.UserRoles",
+								"name": "UserRole",
+								"type": "uint8"
+							},
+							{
+								"internalType": "enum Utils.Statuses",
+								"name": "UserStatus",
+								"type": "uint8"
+							},
+							{
+								"internalType": "string",
+								"name": "Latitude",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "Longitude",
+								"type": "string"
+							},
+							{
+								"internalType": "address",
+								"name": "UserAddress",
+								"type": "address"
+							}
+						],
+						"internalType": "struct Utils.User[]",
+						"name": "filteredUsers",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "enum Utils.UserRoles",
 						"name": "_role",
 						"type": "uint8"
@@ -38,14 +123,14 @@
 								"type": "uint8"
 							},
 							{
-								"internalType": "uint256",
+								"internalType": "string",
 								"name": "Latitude",
-								"type": "uint256"
+								"type": "string"
 							},
 							{
-								"internalType": "uint256",
+								"internalType": "string",
 								"name": "Longitude",
-								"type": "uint256"
+								"type": "string"
 							},
 							{
 								"internalType": "address",
@@ -444,14 +529,14 @@
 								"type": "uint8"
 							},
 							{
-								"internalType": "uint256",
+								"internalType": "string",
 								"name": "Latitude",
-								"type": "uint256"
+								"type": "string"
 							},
 							{
-								"internalType": "uint256",
+								"internalType": "string",
 								"name": "Longitude",
-								"type": "uint256"
+								"type": "string"
 							},
 							{
 								"internalType": "address",
@@ -597,19 +682,19 @@
 	},
 	"sources": {
 		"contracts/Regulator.sol": {
-			"keccak256": "0xfa4b0c83f2cfe9ad45684e6d7deda22d7095a2aa334ed97627ca3205923b6ce4",
+			"keccak256": "0xbdc0e83230686479717f090d051f03d93c52435675082a924e87387e1c4ccbb2",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://6b52b2fe262b33d871513112b2bc3949a7e5ef8ec26f0c4c5e5fbe4353968268",
-				"dweb:/ipfs/QmViptHMagLV8qBna9Cg6RoK9hsnVThUAjXG2mkvbtn1aR"
+				"bzz-raw://be14ee06e99539bc9db6a93ba412a25974e01cabcc81a360d3ebc8fd02db5df2",
+				"dweb:/ipfs/QmUFrCcsQezrWHpdcAxBSy9yNuwJTXaVvHUzccAFMgFWuD"
 			]
 		},
 		"contracts/Utils.sol": {
-			"keccak256": "0x43193e0af3ee27d2fa3721eb428eee9c4b715893ffc6199bdc052cd2e67efb78",
+			"keccak256": "0x1cd9afb63823236daebb4a289fc8493caa0366c0b810b7a9f5c62758edd6b6be",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://05455694c196e9586dddca4316873a53ee4f3e740f17488661257669778f5c3f",
-				"dweb:/ipfs/QmYtdBTCPkEiu7WimD83bSeFdmuMWpoUNyqTvoYHwnfZB6"
+				"bzz-raw://885e4407bd7b2f2cc994ff18b7c73b1c14bac0de6d92c21fb76a3317b3d0441d",
+				"dweb:/ipfs/QmYeAKnEZCWkE4FHMEHpVFRvonCkLJrzCmUEoktQY1CNho"
 			]
 		}
 	},

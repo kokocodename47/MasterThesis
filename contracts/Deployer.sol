@@ -16,8 +16,8 @@ contract Deployer is Regulator, Users, Drugs, PatchsTransactions {
             "Regulator",
             UserRoles.Regulator,
             Statuses.Active,
-            0,
-            0,
+            "",
+            "",
             msg.sender
         );
         UsersAddresses.push(msg.sender);

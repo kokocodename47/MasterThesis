@@ -6,6 +6,19 @@
 	"output": {
 		"abi": [
 			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_useraddress",
+						"type": "address"
+					}
+				],
+				"name": "UserCreationEvent",
+				"type": "event"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "string",
@@ -23,14 +36,14 @@
 						"type": "uint8"
 					},
 					{
-						"internalType": "uint256",
+						"internalType": "string",
 						"name": "_lat",
-						"type": "uint256"
+						"type": "string"
 					},
 					{
-						"internalType": "uint256",
+						"internalType": "string",
 						"name": "_long",
-						"type": "uint256"
+						"type": "string"
 					}
 				],
 				"name": "CreateUser",
@@ -77,14 +90,14 @@
 								"type": "uint8"
 							},
 							{
-								"internalType": "uint256",
+								"internalType": "string",
 								"name": "Latitude",
-								"type": "uint256"
+								"type": "string"
 							},
 							{
-								"internalType": "uint256",
+								"internalType": "string",
 								"name": "Longitude",
-								"type": "uint256"
+								"type": "string"
 							},
 							{
 								"internalType": "address",
@@ -483,14 +496,14 @@
 								"type": "uint8"
 							},
 							{
-								"internalType": "uint256",
+								"internalType": "string",
 								"name": "Latitude",
-								"type": "uint256"
+								"type": "string"
 							},
 							{
-								"internalType": "uint256",
+								"internalType": "string",
 								"name": "Longitude",
-								"type": "uint256"
+								"type": "string"
 							},
 							{
 								"internalType": "address",
@@ -588,19 +601,19 @@
 	},
 	"sources": {
 		"contracts/Users.sol": {
-			"keccak256": "0xe85812d49655dc08a625084ebca96cd24bd0ab135e36bb9d2a773b4fdcc2264b",
+			"keccak256": "0x7416757d0bc0928ee8cde94e2fcd365a6d224e025756c119ee0ebf06d63b9d78",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://6f12fc5d11e000564afb57fb727a505ace245aa70e74d083928b265436b9fd21",
-				"dweb:/ipfs/QmStx1UJYrvxSAVj7fip21ZGSEc4cgpyqU8YdszLMvZ8Fh"
+				"bzz-raw://696e7d818242c60e1b7c94f9bd562c1fa52d60623691472acac89c8863675b72",
+				"dweb:/ipfs/QmPGQZBSA2oY2YvKeGXJoWRDRRWcWYYmUsDQe91dGFe2Qv"
 			]
 		},
 		"contracts/Utils.sol": {
-			"keccak256": "0x43193e0af3ee27d2fa3721eb428eee9c4b715893ffc6199bdc052cd2e67efb78",
+			"keccak256": "0x3d959a82a2eb5f7a38d8daaa30be687e346e4f7dddd101680158cb4e9a061a82",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://05455694c196e9586dddca4316873a53ee4f3e740f17488661257669778f5c3f",
-				"dweb:/ipfs/QmYtdBTCPkEiu7WimD83bSeFdmuMWpoUNyqTvoYHwnfZB6"
+				"bzz-raw://b151dfb3e36ed7156894c38936a2a674ac9f59f7fda12bc67f7d2e0c9dded1dd",
+				"dweb:/ipfs/QmS36s4UkBuqfhrpUj2QBbsDF7ZDkPDw5iDP4aniPFHUCY"
 			]
 		}
 	},

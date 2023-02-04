@@ -8,6 +8,62 @@
 			{
 				"inputs": [
 					{
+						"internalType": "enum Utils.Statuses",
+						"name": "_status",
+						"type": "uint8"
+					}
+				],
+				"name": "GetUsersByStatus",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "UserID",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "UserName",
+								"type": "string"
+							},
+							{
+								"internalType": "enum Utils.UserRoles",
+								"name": "UserRole",
+								"type": "uint8"
+							},
+							{
+								"internalType": "enum Utils.Statuses",
+								"name": "UserStatus",
+								"type": "uint8"
+							},
+							{
+								"internalType": "string",
+								"name": "Latitude",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "Longitude",
+								"type": "string"
+							},
+							{
+								"internalType": "address",
+								"name": "UserAddress",
+								"type": "address"
+							}
+						],
+						"internalType": "struct Utils.User[]",
+						"name": "filteredUsers",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "enum Utils.UserRoles",
 						"name": "_role",
 						"type": "uint8"
@@ -38,14 +94,14 @@
 								"type": "uint8"
 							},
 							{
-								"internalType": "uint256",
+								"internalType": "string",
 								"name": "Latitude",
-								"type": "uint256"
+								"type": "string"
 							},
 							{
-								"internalType": "uint256",
+								"internalType": "string",
 								"name": "Longitude",
-								"type": "uint256"
+								"type": "string"
 							},
 							{
 								"internalType": "address",
@@ -149,11 +205,57 @@
 								"internalType": "enum Utils.Statuses",
 								"name": "DrugStatus",
 								"type": "uint8"
+							},
+							{
+								"internalType": "string",
+								"name": "DrugRegNo",
+								"type": "string"
 							}
 						],
 						"internalType": "struct Utils.Drug",
 						"name": "",
 						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_useraddress",
+						"type": "address"
+					}
+				],
+				"name": "ReadDrugsByUser",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "DrugName",
+								"type": "string"
+							},
+							{
+								"internalType": "address",
+								"name": "Manufacturer",
+								"type": "address"
+							},
+							{
+								"internalType": "enum Utils.Statuses",
+								"name": "DrugStatus",
+								"type": "uint8"
+							},
+							{
+								"internalType": "string",
+								"name": "DrugRegNo",
+								"type": "string"
+							}
+						],
+						"internalType": "struct Utils.Drug[]",
+						"name": "DrugsList",
+						"type": "tuple[]"
 					}
 				],
 				"stateMutability": "view",
@@ -444,14 +546,14 @@
 								"type": "uint8"
 							},
 							{
-								"internalType": "uint256",
+								"internalType": "string",
 								"name": "Latitude",
-								"type": "uint256"
+								"type": "string"
 							},
 							{
-								"internalType": "uint256",
+								"internalType": "string",
 								"name": "Longitude",
-								"type": "uint256"
+								"type": "string"
 							},
 							{
 								"internalType": "address",
@@ -549,11 +651,11 @@
 	},
 	"sources": {
 		"contracts/Utils.sol": {
-			"keccak256": "0x43193e0af3ee27d2fa3721eb428eee9c4b715893ffc6199bdc052cd2e67efb78",
+			"keccak256": "0x4080b3cce318c0c06ff7470e869e149b180ff0ec46a2196aeaa9133674c7cb35",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://05455694c196e9586dddca4316873a53ee4f3e740f17488661257669778f5c3f",
-				"dweb:/ipfs/QmYtdBTCPkEiu7WimD83bSeFdmuMWpoUNyqTvoYHwnfZB6"
+				"bzz-raw://42e62245f1ee2f5666ae2280248654a5995194932af0df4fd42ba72e1c5b0b81",
+				"dweb:/ipfs/QmfW2DuWjPCMrXoVDJtGD7We4o9hE7AfdiYQAeMMnjcFPT"
 			]
 		}
 	},

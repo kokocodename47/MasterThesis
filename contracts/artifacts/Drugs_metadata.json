@@ -37,6 +37,180 @@
 			{
 				"inputs": [
 					{
+						"internalType": "enum Utils.Statuses",
+						"name": "_status",
+						"type": "uint8"
+					}
+				],
+				"name": "GetUsersByStatus",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "UserID",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "UserName",
+								"type": "string"
+							},
+							{
+								"internalType": "enum Utils.UserRoles",
+								"name": "UserRole",
+								"type": "uint8"
+							},
+							{
+								"internalType": "enum Utils.Statuses",
+								"name": "UserStatus",
+								"type": "uint8"
+							},
+							{
+								"internalType": "string",
+								"name": "Latitude",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "Longitude",
+								"type": "string"
+							},
+							{
+								"internalType": "address",
+								"name": "UserAddress",
+								"type": "address"
+							}
+						],
+						"internalType": "struct Utils.User[]",
+						"name": "filteredUsers",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "enum Utils.UserRoles",
+						"name": "_role",
+						"type": "uint8"
+					}
+				],
+				"name": "GetUsersByType",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "UserID",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "UserName",
+								"type": "string"
+							},
+							{
+								"internalType": "enum Utils.UserRoles",
+								"name": "UserRole",
+								"type": "uint8"
+							},
+							{
+								"internalType": "enum Utils.Statuses",
+								"name": "UserStatus",
+								"type": "uint8"
+							},
+							{
+								"internalType": "string",
+								"name": "Latitude",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "Longitude",
+								"type": "string"
+							},
+							{
+								"internalType": "address",
+								"name": "UserAddress",
+								"type": "address"
+							}
+						],
+						"internalType": "struct Utils.User[]",
+						"name": "filteredUsers",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "Owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "PatchTrannsactions",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "DrugRegNo",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "PatchNo",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "LineNo",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "FromID",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "ToID",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "Amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "TransactionDate",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "string",
 						"name": "_regno",
 						"type": "string"
@@ -60,6 +234,11 @@
 								"internalType": "enum Utils.Statuses",
 								"name": "DrugStatus",
 								"type": "uint8"
+							},
+							{
+								"internalType": "string",
+								"name": "DrugRegNo",
+								"type": "string"
 							}
 						],
 						"internalType": "struct Utils.Drug",
@@ -73,12 +252,390 @@
 			{
 				"inputs": [
 					{
+						"internalType": "address",
+						"name": "_useraddress",
+						"type": "address"
+					}
+				],
+				"name": "ReadDrugsByUser",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "DrugName",
+								"type": "string"
+							},
+							{
+								"internalType": "address",
+								"name": "Manufacturer",
+								"type": "address"
+							},
+							{
+								"internalType": "enum Utils.Statuses",
+								"name": "DrugStatus",
+								"type": "uint8"
+							},
+							{
+								"internalType": "string",
+								"name": "DrugRegNo",
+								"type": "string"
+							}
+						],
+						"internalType": "struct Utils.Drug[]",
+						"name": "DrugsList",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_patchno",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_drugno",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "_fromaddress",
+						"type": "address"
+					}
+				],
+				"name": "ReadParentAndSiblingsTransactions",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "DrugRegNo",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "PatchNo",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "LineNo",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "FromID",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "ToID",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "Amount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "TransactionDate",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct Utils.PatchTransaction[]",
+						"name": "UserTransaction",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "ReadRoleByUser",
+				"outputs": [
+					{
+						"internalType": "enum Utils.UserRoles",
+						"name": "_userrole",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_drugno",
+						"type": "string"
+					}
+				],
+				"name": "ReadTransactionsByDrug",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "DrugRegNo",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "PatchNo",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "LineNo",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "FromID",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "ToID",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "Amount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "TransactionDate",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct Utils.PatchTransaction[]",
+						"name": "UserTransaction",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_patchno",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_drugno",
+						"type": "string"
+					}
+				],
+				"name": "ReadTransactionsByPatchNo",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "DrugRegNo",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "PatchNo",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "LineNo",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "FromID",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "ToID",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "Amount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "TransactionDate",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct Utils.PatchTransaction[]",
+						"name": "UserTransaction",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_useraddress",
+						"type": "address"
+					}
+				],
+				"name": "ReadTransactionsByUser",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "DrugRegNo",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "PatchNo",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "LineNo",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "FromID",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "ToID",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "Amount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "TransactionDate",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct Utils.PatchTransaction[]",
+						"name": "UserTransaction",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_address",
+						"type": "address"
+					}
+				],
+				"name": "ReadUser",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "UserID",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "UserName",
+								"type": "string"
+							},
+							{
+								"internalType": "enum Utils.UserRoles",
+								"name": "UserRole",
+								"type": "uint8"
+							},
+							{
+								"internalType": "enum Utils.Statuses",
+								"name": "UserStatus",
+								"type": "uint8"
+							},
+							{
+								"internalType": "string",
+								"name": "Latitude",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "Longitude",
+								"type": "string"
+							},
+							{
+								"internalType": "address",
+								"name": "UserAddress",
+								"type": "address"
+							}
+						],
+						"internalType": "struct Utils.User",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_patchno",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_drugno",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "_fromaddress",
+						"type": "address"
+					}
+				],
+				"name": "ReturnRemainingAmount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "_remainamount",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "string",
 						"name": "_regno",
 						"type": "string"
 					}
 				],
-				"name": "SetDrugStatus",
+				"name": "SetDrugSuspended",
 				"outputs": [
 					{
 						"internalType": "bool",
@@ -87,6 +644,30 @@
 					}
 				],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "s1",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "s2",
+						"type": "string"
+					}
+				],
+				"name": "compareStringsbyBytes",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "pure",
 				"type": "function"
 			}
 		],
@@ -118,19 +699,19 @@
 	},
 	"sources": {
 		"contracts/Drugs.sol": {
-			"keccak256": "0xdc74ad0b056b7795f616a39b945e9ac19a8faf129469dd9d2e0efda91a958f44",
+			"keccak256": "0xf9011dbf23ef3ca5ffefd3fe86669803a3af18413f4db098ef08044001c3d606",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://099698a2c47bf55d92eb1903d5dea0e4446caeb3745cf5f91b5a0b2f0080bac0",
-				"dweb:/ipfs/QmaYqQSX37XLoaMvwppdjTuZg8Y47SdGkS5zbjKXqvkzND"
+				"bzz-raw://32449cc427bfaf5bbcc5073abc70d4fcf9512929fa204ed2c2f97bfac51dbe6e",
+				"dweb:/ipfs/QmWEAiMhF6bnb2UJUQibd4WJYAZVyNFtuJqoKZhxc78bAB"
 			]
 		},
 		"contracts/Utils.sol": {
-			"keccak256": "0xeddc8b0f16beab26e9330e0b83f23f409fe9d329423266f59c2f815d4ae7fd5f",
+			"keccak256": "0x4080b3cce318c0c06ff7470e869e149b180ff0ec46a2196aeaa9133674c7cb35",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://1dd1608aca50017c49fc33791f0aea2378bb7b4d41ed2828c2b99f4ab7ef5c3c",
-				"dweb:/ipfs/QmScuVSGHMMU8EG9aj8XZ6Aumpu2owSBrk4gTT82DtPKVV"
+				"bzz-raw://42e62245f1ee2f5666ae2280248654a5995194932af0df4fd42ba72e1c5b0b81",
+				"dweb:/ipfs/QmfW2DuWjPCMrXoVDJtGD7We4o9hE7AfdiYQAeMMnjcFPT"
 			]
 		}
 	},

@@ -22,6 +22,7 @@ contract Utils {
     //Users
     address public Owner;
     enum UserRoles {
+        Unregistered,
         Regulator,
         Mnufacturer,
         Transporter,
@@ -29,16 +30,15 @@ contract Utils {
         Hospital,
         Pharmacy,
         Physician,
-        Patient,
-        Unregistered
+        Patient       
     }
     struct User {
         string UserID;
         string UserName;
         UserRoles UserRole;
         Statuses UserStatus;
-        uint256 Latitude;
-        uint256 Longitude;
+        string Latitude;
+        string Longitude;
         address UserAddress;
     }
     mapping(address => User) UserAddressMapping;
@@ -58,6 +58,27 @@ contract Utils {
         uint256 count;
         for (uint256 i = 0; i < usersCount; i++) {
             if (UserAddressMapping[UsersAddresses[i]].UserRole == _role) {
+                usersTemp[count] = UserAddressMapping[UsersAddresses[i]];
+                count += 1;
+            }
+        }
+
+        filteredUsers = new User[](count);
+        for (uint256 i = 0; i < count; i++) {
+            filteredUsers[i] = usersTemp[i];
+        }
+    }
+
+    function GetUsersByStatus(Statuses _status)
+        public
+        view
+        returns (User[] memory filteredUsers)
+    {
+        uint256 usersCount = UsersAddresses.length;
+        User[] memory usersTemp = new User[](usersCount);
+        uint256 count;
+        for (uint256 i = 0; i < usersCount; i++) {
+            if (UserAddressMapping[UsersAddresses[i]].UserStatus == _status) {
                 usersTemp[count] = UserAddressMapping[UsersAddresses[i]];
                 count += 1;
             }
@@ -89,6 +110,7 @@ contract Utils {
         string DrugName;
         address Manufacturer;
         Statuses DrugStatus;
+        string DrugRegNo;
     }
     enum DrugTypes {
         HumanPharmaceutical,
@@ -104,6 +126,23 @@ contract Utils {
 
     function ReadDrug(string memory _regno) public view returns (Drug memory) {
         return DrugRegNoMapping[_regno];
+    }
+
+    function ReadDrugsByUser(address _useraddress) public view returns(Drug[] memory DrugsList){
+        uint256 drugsCount = DrugsRegNos.length;
+        Drug[] memory drugsTemp = new Drug[](drugsCount);
+        uint256 count;
+        for (uint256 i = 0; i < drugsCount; i++) {
+            if (DrugRegNoMapping[DrugsRegNos[i]].Manufacturer == _useraddress) {
+                drugsTemp[count] = DrugRegNoMapping[DrugsRegNos[i]];
+                count += 1;
+            }
+        }
+
+        DrugsList = new Drug[](count);
+        for (uint256 i = 0; i < count; i++) {
+            DrugsList[i] = drugsTemp[i];
+        }
     }
 
     //Transactions

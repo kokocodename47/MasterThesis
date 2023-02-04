@@ -8,9 +8,10 @@ contract Users is Utils {
         string memory _id,
         string memory _username,
         UserRoles _userrole,
-        uint256 _lat,
-        uint256 _long
+        string memory _lat,
+        string memory _long
     ) public returns (bool) {
+        require (_userrole != UserRoles.Regulator);
         Statuses _activeUser;
         if(_userrole == UserRoles.Physician || _userrole == UserRoles.Patient){
             _activeUser = Statuses.Active;
@@ -31,4 +32,7 @@ contract Users is Utils {
         return true;
     }
 
+    event UserCreationEvent(
+        address indexed _useraddress
+    );
 }
