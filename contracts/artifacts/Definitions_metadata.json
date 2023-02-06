@@ -1,0 +1,108 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "Owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "PatchTrannsactions",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "DrugRegNo",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "PatchNo",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "LineNo",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "FromID",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "ToID",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "Amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "TransactionDate",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Definitions.sol": "Definitions"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Definitions.sol": {
+			"keccak256": "0x2e3a71d42135c8bb486fbb70b0ebef2b7ee3e17b259bfde652b0e004e1d59684",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://885501dbf6758beed6828254883c6a7abad3bb2eca8d1337e1d8ffaaf1eeb87c",
+				"dweb:/ipfs/QmX2oxgnHJM8kE2iPoD8Dkt6Yoxkb6RoRhktU5B1pSLPUF"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,14 +1,9 @@
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity ^0.8.0;
 pragma experimental ABIEncoderV2;
-
-contract Utils {
-    //Shared
-    enum Statuses {
-        New,
-        Active,
-        Suspended
-    }
+import "./Definitions.sol";
+contract Utils is Definitions {
+    
 
     function compareStringsbyBytes(string memory s1, string memory s2)
         public
@@ -19,31 +14,8 @@ contract Utils {
             keccak256(abi.encodePacked(s1)) == keccak256(abi.encodePacked(s2));
     }
 
+    
     //Users
-    address public Owner;
-    enum UserRoles {
-        Unregistered,
-        Regulator,
-        Mnufacturer,
-        Transporter,
-        Wholesaler,
-        Hospital,
-        Pharmacy,
-        Physician,
-        Patient       
-    }
-    struct User {
-        string UserID;
-        string UserName;
-        UserRoles UserRole;
-        Statuses UserStatus;
-        string Latitude;
-        string Longitude;
-        address UserAddress;
-    }
-    mapping(address => User) UserAddressMapping;
-    address[] UsersAddresses;
-
     function ReadUser(address _address) public view returns (User memory) {
         return UserAddressMapping[_address];
     }
@@ -90,45 +62,27 @@ contract Utils {
         }
     }
 
-    function ReadRoleByUser()
-        public
-        view
-        returns (UserRoles _userrole)
-    {
+    function ReadRoleByUser() public view returns (UserRoles _userrole) {
         if (msg.sender == Owner) {
             _userrole = UserRoles.Regulator;
-        }else if (UserAddressMapping[msg.sender].UserAddress == address(0)){
+        } else if (UserAddressMapping[msg.sender].UserAddress == address(0)) {
             _userrole = UserRoles.Unregistered;
-        } 
-        else {
+        } else {
             _userrole = UserAddressMapping[msg.sender].UserRole;
         }
     }
 
     //Drugs
-    struct Drug {
-        string DrugName;
-        address Manufacturer;
-        Statuses DrugStatus;
-        string DrugRegNo;
-    }
-    enum DrugTypes {
-        HumanPharmaceutical,
-        Biological,
-        HerbalMedicine,
-        Veterinary,
-        Biocides,
-        Cosmetics,
-        DietarySupplement
-    }
-    mapping(string => Drug) DrugRegNoMapping;
-    string[] DrugsRegNos;
-
+    
     function ReadDrug(string memory _regno) public view returns (Drug memory) {
         return DrugRegNoMapping[_regno];
     }
 
-    function ReadDrugsByUser(address _useraddress) public view returns(Drug[] memory DrugsList){
+    function ReadDrugsByUser(address _useraddress)
+        public
+        view
+        returns (Drug[] memory DrugsList)
+    {
         uint256 drugsCount = DrugsRegNos.length;
         Drug[] memory drugsTemp = new Drug[](drugsCount);
         uint256 count;
@@ -145,18 +99,30 @@ contract Utils {
         }
     }
 
+    function ReadDrugsWithManufacturer(Statuses _drugstatus) public view returns (DrugMan[] memory DrugsList) {
+        uint256 drugsCount = DrugsRegNos.length;
+        Drug[] memory drugsTemp = new Drug[](drugsCount);
+        uint256 count;
+        for (uint256 i = 0; i < drugsCount; i++) {
+            if (DrugRegNoMapping[DrugsRegNos[i]].DrugStatus == _drugstatus) {
+                drugsTemp[count] = DrugRegNoMapping[DrugsRegNos[i]];
+                count += 1;
+            }
+        }
+
+        DrugsList = new DrugMan[](count);
+        for (uint256 i = 0; i < count; i++) {
+            DrugsList[i].DrugName = drugsTemp[i].DrugName;
+            DrugsList[i].Manufacturer = drugsTemp[i].Manufacturer;
+            DrugsList[i].DrugStatus = drugsTemp[i].DrugStatus;
+            DrugsList[i].DrugRegNo = drugsTemp[i].DrugRegNo;
+            DrugsList[i].ManName = UserAddressMapping[drugsTemp[i].Manufacturer].UserName;
+        }
+    }
+
     //Transactions
 
-    struct PatchTransaction {
-        string DrugRegNo;
-        string PatchNo;
-        uint256 LineNo;
-        address FromID;
-        address ToID;
-        uint256 Amount;
-        uint256 TransactionDate;
-    }
-    PatchTransaction[] public PatchTrannsactions;
+    
 
     function ReadTransactionsByUser(address _useraddress)
         public

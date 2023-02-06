@@ -393,11 +393,103 @@
 								"internalType": "enum Utils.Statuses",
 								"name": "DrugStatus",
 								"type": "uint8"
+							},
+							{
+								"internalType": "string",
+								"name": "DrugRegNo",
+								"type": "string"
 							}
 						],
 						"internalType": "struct Utils.Drug",
 						"name": "",
 						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_useraddress",
+						"type": "address"
+					}
+				],
+				"name": "ReadDrugsByUser",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "DrugName",
+								"type": "string"
+							},
+							{
+								"internalType": "address",
+								"name": "Manufacturer",
+								"type": "address"
+							},
+							{
+								"internalType": "enum Utils.Statuses",
+								"name": "DrugStatus",
+								"type": "uint8"
+							},
+							{
+								"internalType": "string",
+								"name": "DrugRegNo",
+								"type": "string"
+							}
+						],
+						"internalType": "struct Utils.Drug[]",
+						"name": "DrugsList",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "enum Utils.Statuses",
+						"name": "_drugstatus",
+						"type": "uint8"
+					}
+				],
+				"name": "ReadDrugsWithManufacturer",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "DrugName",
+								"type": "string"
+							},
+							{
+								"internalType": "address",
+								"name": "Manufacturer",
+								"type": "address"
+							},
+							{
+								"internalType": "enum Utils.Statuses",
+								"name": "DrugStatus",
+								"type": "uint8"
+							},
+							{
+								"internalType": "string",
+								"name": "DrugRegNo",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "ManName",
+								"type": "string"
+							}
+						],
+						"internalType": "struct Utils.DrugMan[]",
+						"name": "DrugsList",
+						"type": "tuple[]"
 					}
 				],
 				"stateMutability": "view",
@@ -772,7 +864,7 @@
 						"type": "string"
 					}
 				],
-				"name": "SetDrugStatus",
+				"name": "SetDrugSuspended",
 				"outputs": [
 					{
 						"internalType": "bool",
@@ -868,11 +960,11 @@
 			]
 		},
 		"contracts/Drugs.sol": {
-			"keccak256": "0xdc74ad0b056b7795f616a39b945e9ac19a8faf129469dd9d2e0efda91a958f44",
+			"keccak256": "0xf9011dbf23ef3ca5ffefd3fe86669803a3af18413f4db098ef08044001c3d606",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://099698a2c47bf55d92eb1903d5dea0e4446caeb3745cf5f91b5a0b2f0080bac0",
-				"dweb:/ipfs/QmaYqQSX37XLoaMvwppdjTuZg8Y47SdGkS5zbjKXqvkzND"
+				"bzz-raw://32449cc427bfaf5bbcc5073abc70d4fcf9512929fa204ed2c2f97bfac51dbe6e",
+				"dweb:/ipfs/QmWEAiMhF6bnb2UJUQibd4WJYAZVyNFtuJqoKZhxc78bAB"
 			]
 		},
 		"contracts/PatchsTransactions.sol": {
@@ -900,11 +992,11 @@
 			]
 		},
 		"contracts/Utils.sol": {
-			"keccak256": "0x1cd9afb63823236daebb4a289fc8493caa0366c0b810b7a9f5c62758edd6b6be",
+			"keccak256": "0x457f10d62641b028c2b3ace920db864b83422075aedd246a718b42af6153d589",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://885e4407bd7b2f2cc994ff18b7c73b1c14bac0de6d92c21fb76a3317b3d0441d",
-				"dweb:/ipfs/QmYeAKnEZCWkE4FHMEHpVFRvonCkLJrzCmUEoktQY1CNho"
+				"bzz-raw://6afa81f6f438666f3383fa89d23c9f2ecda912672f2dc7251cbab93eecab9583",
+				"dweb:/ipfs/QmYmHPhXfsnzWRKuYdMWyu3TwPjozVhGVdmRLUoCaYj5Gv"
 			]
 		}
 	},

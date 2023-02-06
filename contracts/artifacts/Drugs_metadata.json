@@ -252,6 +252,47 @@
 			{
 				"inputs": [
 					{
+						"internalType": "enum Utils.Statuses",
+						"name": "_drugstatus",
+						"type": "uint8"
+					}
+				],
+				"name": "ReadDrugsByStatus",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "DrugName",
+								"type": "string"
+							},
+							{
+								"internalType": "address",
+								"name": "Manufacturer",
+								"type": "address"
+							},
+							{
+								"internalType": "enum Utils.Statuses",
+								"name": "DrugStatus",
+								"type": "uint8"
+							},
+							{
+								"internalType": "string",
+								"name": "DrugRegNo",
+								"type": "string"
+							}
+						],
+						"internalType": "struct Utils.Drug[]",
+						"name": "DrugsList",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "address",
 						"name": "_useraddress",
 						"type": "address"
@@ -707,11 +748,11 @@
 			]
 		},
 		"contracts/Utils.sol": {
-			"keccak256": "0x4080b3cce318c0c06ff7470e869e149b180ff0ec46a2196aeaa9133674c7cb35",
+			"keccak256": "0x314316b680b35def36a69de83d770e120a405584e7e1719d1516335f885b8286",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://42e62245f1ee2f5666ae2280248654a5995194932af0df4fd42ba72e1c5b0b81",
-				"dweb:/ipfs/QmfW2DuWjPCMrXoVDJtGD7We4o9hE7AfdiYQAeMMnjcFPT"
+				"bzz-raw://fedabda9e81f83d7dac6cf321e0547738830dab1d848ffd62dac85a9f54b0547",
+				"dweb:/ipfs/QmW6E2G4orGzogk8hRR1sUuXjApGvjspYwKqmFUumzC4XG"
 			]
 		}
 	},
