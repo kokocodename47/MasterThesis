@@ -556,9 +556,29 @@
 								"type": "address"
 							},
 							{
+								"internalType": "string",
+								"name": "FromName",
+								"type": "string"
+							},
+							{
+								"internalType": "enum Definitions.UserRoles",
+								"name": "FromRole",
+								"type": "uint8"
+							},
+							{
 								"internalType": "address",
 								"name": "ToID",
 								"type": "address"
+							},
+							{
+								"internalType": "string",
+								"name": "ToName",
+								"type": "string"
+							},
+							{
+								"internalType": "enum Definitions.UserRoles",
+								"name": "ToRole",
+								"type": "uint8"
 							},
 							{
 								"internalType": "uint256",
@@ -571,7 +591,7 @@
 								"type": "uint256"
 							}
 						],
-						"internalType": "struct Definitions.PatchTransaction[]",
+						"internalType": "struct Definitions.PatchTransactionsFullData[]",
 						"name": "UserTransaction",
 						"type": "tuple[]"
 					}
@@ -725,11 +745,11 @@
 			]
 		},
 		"contracts/Utils.sol": {
-			"keccak256": "0x708d7c478747d62261be13ba575ab4285f9a46b34ce01489de47377cf2a8b363",
+			"keccak256": "0x773da737a4bf73d9b1647ad7e2f9393e75eab932037f61f405d19fdcff98e71e",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://f5ea02a929053be5122b017b2eb17d55295005c1a9e884fecb4a4405b57eb58d",
-				"dweb:/ipfs/QmRym2mxGfB4eQakru5jdpwyLE7YxD1jKB3cQ6TMbBXUzZ"
+				"bzz-raw://d16db0138194cfbf89dffcfad106328680d2a30babfa4c5295a6c6195de049a6",
+				"dweb:/ipfs/Qmbz69nxvz3FZmhbgVZWFSyPPW68y8JZj2gsweJSS1eGLD"
 			]
 		}
 	},
