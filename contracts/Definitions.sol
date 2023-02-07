@@ -72,6 +72,19 @@ contract Definitions {
         uint256 Amount;
         uint256 TransactionDate;
     }
-    PatchTransaction[] public PatchTrannsactions;
 
+    struct PatchTransactionsFullData {
+        string DrugRegNo;
+        string PatchNo;
+        uint256 LineNo;
+        address FromID;
+        string FromName;
+        UserRoles FromRole;
+        address ToID;
+        string ToName;
+        UserRoles ToRole;
+        uint256 Amount;
+        uint256 TransactionDate;
+    }
+    PatchTransaction[] public PatchTrannsactions;
 }

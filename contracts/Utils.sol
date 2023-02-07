@@ -177,7 +177,7 @@ contract Utils is Definitions {
     function ReadTransactionsByPatchNo(
         string memory _patchno,
         string memory _drugno
-    ) public view returns (PatchTransaction[] memory UserTransaction) {
+    ) public view returns (PatchTransactionsFullData[] memory UserTransaction) {
         uint256 MatchedRows;
         PatchTransaction[] memory TempTran = new PatchTransaction[](
             PatchTrannsactions.length
@@ -195,14 +195,23 @@ contract Utils is Definitions {
                 MatchedRows++;
             }
         }
-        UserTransaction = new PatchTransaction[](MatchedRows);
+        UserTransaction = new PatchTransactionsFullData[](MatchedRows);
         if (MatchedRows > 0) {
             for (uint256 i = 0; i < MatchedRows; i++) {
-                UserTransaction[i] = TempTran[i];
+                UserTransaction[i].DrugRegNo = TempTran[i].DrugRegNo;
+                UserTransaction[i].PatchNo = TempTran[i].PatchNo;
+                UserTransaction[i].LineNo = TempTran[i].LineNo;
+                UserTransaction[i].FromID = TempTran[i].FromID;
+                UserTransaction[i].FromName = UserAddressMapping[TempTran[i].FromID].UserName;
+                UserTransaction[i].FromRole = UserAddressMapping[TempTran[i].FromID].UserRole;
+                UserTransaction[i].ToID = TempTran[i].ToID;
+                UserTransaction[i].ToName = UserAddressMapping[TempTran[i].ToID].UserName;
+                UserTransaction[i].ToRole = UserAddressMapping[TempTran[i].ToID].UserRole;
+                UserTransaction[i].Amount = TempTran[i].Amount;
+                UserTransaction[i].TransactionDate = TempTran[i].TransactionDate;
             }
         }
     }
-
     function ReadParentAndSiblingsTransactions(
         string memory _patchno,
         string memory _drugno,

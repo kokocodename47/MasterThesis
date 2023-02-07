@@ -480,9 +480,29 @@
 								"type": "address"
 							},
 							{
+								"internalType": "string",
+								"name": "FromName",
+								"type": "string"
+							},
+							{
+								"internalType": "enum Definitions.UserRoles",
+								"name": "FromRole",
+								"type": "uint8"
+							},
+							{
 								"internalType": "address",
 								"name": "ToID",
 								"type": "address"
+							},
+							{
+								"internalType": "string",
+								"name": "ToName",
+								"type": "string"
+							},
+							{
+								"internalType": "enum Definitions.UserRoles",
+								"name": "ToRole",
+								"type": "uint8"
 							},
 							{
 								"internalType": "uint256",
@@ -495,7 +515,7 @@
 								"type": "uint256"
 							}
 						],
-						"internalType": "struct Definitions.PatchTransaction[]",
+						"internalType": "struct Definitions.PatchTransactionsFullData[]",
 						"name": "UserTransaction",
 						"type": "tuple[]"
 					}
@@ -697,19 +717,19 @@
 	},
 	"sources": {
 		"contracts/Definitions.sol": {
-			"keccak256": "0x2e3a71d42135c8bb486fbb70b0ebef2b7ee3e17b259bfde652b0e004e1d59684",
+			"keccak256": "0xa2d7f6b6d6a7a9959926897f62e2fce3e7f0b7b549786175841bda21f3c80364",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://885501dbf6758beed6828254883c6a7abad3bb2eca8d1337e1d8ffaaf1eeb87c",
-				"dweb:/ipfs/QmX2oxgnHJM8kE2iPoD8Dkt6Yoxkb6RoRhktU5B1pSLPUF"
+				"bzz-raw://b5d635c2f90c5a51a6b2e7767ed4f4589165ff53962accffcac97187bb643943",
+				"dweb:/ipfs/QmcUfK4Y5DHTe4ncgn7D1Pui6DZP3P9cNrRG7SxPZ2ceQS"
 			]
 		},
 		"contracts/Utils.sol": {
-			"keccak256": "0x65e7d741bb619d54ed2ba26a212f6eab4532ef27bc404ebda30137ee3c8a70f9",
+			"keccak256": "0x708d7c478747d62261be13ba575ab4285f9a46b34ce01489de47377cf2a8b363",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://c18405f8d26ffe843f58d925ffb824d693e8c98e4a1f1f1189ea1dd6db639d42",
-				"dweb:/ipfs/QmThgvtpe8yKMDuJV9ffbmJmUvk11YnmDGJ2JUHT8qkrdj"
+				"bzz-raw://f5ea02a929053be5122b017b2eb17d55295005c1a9e884fecb4a4405b57eb58d",
+				"dweb:/ipfs/QmRym2mxGfB4eQakru5jdpwyLE7YxD1jKB3cQ6TMbBXUzZ"
 			]
 		}
 	},
