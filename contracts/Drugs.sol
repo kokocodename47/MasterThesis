@@ -4,9 +4,6 @@ pragma experimental ABIEncoderV2;
 import "./Utils.sol";
 contract Drugs is Utils{
 
-    constructor() {
-        //DrugOwner = msg.sender;
-    }
 
     modifier onlyDrugOwner() {
         address DrugOwner;

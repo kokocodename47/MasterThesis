@@ -6,6 +6,35 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "EPRAccessList",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "PatientAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "DoctorAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "HasAccess",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "Owner",
 				"outputs": [
@@ -96,11 +125,11 @@
 	},
 	"sources": {
 		"contracts/Definitions.sol": {
-			"keccak256": "0xa2d7f6b6d6a7a9959926897f62e2fce3e7f0b7b549786175841bda21f3c80364",
+			"keccak256": "0x887f4e4417e1ea535f962872c10839c237e32e0b6ddc5af4d64dc66d15ac689b",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://b5d635c2f90c5a51a6b2e7767ed4f4589165ff53962accffcac97187bb643943",
-				"dweb:/ipfs/QmcUfK4Y5DHTe4ncgn7D1Pui6DZP3P9cNrRG7SxPZ2ceQS"
+				"bzz-raw://a8a72b9890d169af9387b6b1762e3dc60ebe357ad2325b32ca86869625dd823f",
+				"dweb:/ipfs/QmSzUiZ7D2LDEDevyguGLCq93UWd2pP6aUVYXuhNBE8JGJ"
 			]
 		}
 	},

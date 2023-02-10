@@ -6,11 +6,6 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [],
-				"stateMutability": "nonpayable",
-				"type": "constructor"
-			},
-			{
 				"inputs": [
 					{
 						"internalType": "string",
@@ -37,7 +32,36 @@
 			{
 				"inputs": [
 					{
-						"internalType": "enum Utils.Statuses",
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "EPRAccessList",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "PatientAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "DoctorAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "HasAccess",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "enum Definitions.Statuses",
 						"name": "_status",
 						"type": "uint8"
 					}
@@ -57,12 +81,12 @@
 								"type": "string"
 							},
 							{
-								"internalType": "enum Utils.UserRoles",
+								"internalType": "enum Definitions.UserRoles",
 								"name": "UserRole",
 								"type": "uint8"
 							},
 							{
-								"internalType": "enum Utils.Statuses",
+								"internalType": "enum Definitions.Statuses",
 								"name": "UserStatus",
 								"type": "uint8"
 							},
@@ -82,7 +106,7 @@
 								"type": "address"
 							}
 						],
-						"internalType": "struct Utils.User[]",
+						"internalType": "struct Definitions.User[]",
 						"name": "filteredUsers",
 						"type": "tuple[]"
 					}
@@ -93,7 +117,7 @@
 			{
 				"inputs": [
 					{
-						"internalType": "enum Utils.UserRoles",
+						"internalType": "enum Definitions.UserRoles",
 						"name": "_role",
 						"type": "uint8"
 					}
@@ -113,12 +137,12 @@
 								"type": "string"
 							},
 							{
-								"internalType": "enum Utils.UserRoles",
+								"internalType": "enum Definitions.UserRoles",
 								"name": "UserRole",
 								"type": "uint8"
 							},
 							{
-								"internalType": "enum Utils.Statuses",
+								"internalType": "enum Definitions.Statuses",
 								"name": "UserStatus",
 								"type": "uint8"
 							},
@@ -138,7 +162,7 @@
 								"type": "address"
 							}
 						],
-						"internalType": "struct Utils.User[]",
+						"internalType": "struct Definitions.User[]",
 						"name": "filteredUsers",
 						"type": "tuple[]"
 					}
@@ -231,7 +255,7 @@
 								"type": "address"
 							},
 							{
-								"internalType": "enum Utils.Statuses",
+								"internalType": "enum Definitions.Statuses",
 								"name": "DrugStatus",
 								"type": "uint8"
 							},
@@ -241,50 +265,9 @@
 								"type": "string"
 							}
 						],
-						"internalType": "struct Utils.Drug",
+						"internalType": "struct Definitions.Drug",
 						"name": "",
 						"type": "tuple"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "enum Utils.Statuses",
-						"name": "_drugstatus",
-						"type": "uint8"
-					}
-				],
-				"name": "ReadDrugsByStatus",
-				"outputs": [
-					{
-						"components": [
-							{
-								"internalType": "string",
-								"name": "DrugName",
-								"type": "string"
-							},
-							{
-								"internalType": "address",
-								"name": "Manufacturer",
-								"type": "address"
-							},
-							{
-								"internalType": "enum Utils.Statuses",
-								"name": "DrugStatus",
-								"type": "uint8"
-							},
-							{
-								"internalType": "string",
-								"name": "DrugRegNo",
-								"type": "string"
-							}
-						],
-						"internalType": "struct Utils.Drug[]",
-						"name": "DrugsList",
-						"type": "tuple[]"
 					}
 				],
 				"stateMutability": "view",
@@ -313,7 +296,7 @@
 								"type": "address"
 							},
 							{
-								"internalType": "enum Utils.Statuses",
+								"internalType": "enum Definitions.Statuses",
 								"name": "DrugStatus",
 								"type": "uint8"
 							},
@@ -323,7 +306,53 @@
 								"type": "string"
 							}
 						],
-						"internalType": "struct Utils.Drug[]",
+						"internalType": "struct Definitions.Drug[]",
+						"name": "DrugsList",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "enum Definitions.Statuses",
+						"name": "_drugstatus",
+						"type": "uint8"
+					}
+				],
+				"name": "ReadDrugsWithManufacturer",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "DrugName",
+								"type": "string"
+							},
+							{
+								"internalType": "address",
+								"name": "Manufacturer",
+								"type": "address"
+							},
+							{
+								"internalType": "enum Definitions.Statuses",
+								"name": "DrugStatus",
+								"type": "uint8"
+							},
+							{
+								"internalType": "string",
+								"name": "DrugRegNo",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "ManName",
+								"type": "string"
+							}
+						],
+						"internalType": "struct Definitions.DrugMan[]",
 						"name": "DrugsList",
 						"type": "tuple[]"
 					}
@@ -389,7 +418,7 @@
 								"type": "uint256"
 							}
 						],
-						"internalType": "struct Utils.PatchTransaction[]",
+						"internalType": "struct Definitions.PatchTransaction[]",
 						"name": "UserTransaction",
 						"type": "tuple[]"
 					}
@@ -402,7 +431,7 @@
 				"name": "ReadRoleByUser",
 				"outputs": [
 					{
-						"internalType": "enum Utils.UserRoles",
+						"internalType": "enum Definitions.UserRoles",
 						"name": "_userrole",
 						"type": "uint8"
 					}
@@ -458,7 +487,7 @@
 								"type": "uint256"
 							}
 						],
-						"internalType": "struct Utils.PatchTransaction[]",
+						"internalType": "struct Definitions.PatchTransaction[]",
 						"name": "UserTransaction",
 						"type": "tuple[]"
 					}
@@ -504,9 +533,29 @@
 								"type": "address"
 							},
 							{
+								"internalType": "string",
+								"name": "FromName",
+								"type": "string"
+							},
+							{
+								"internalType": "enum Definitions.UserRoles",
+								"name": "FromRole",
+								"type": "uint8"
+							},
+							{
 								"internalType": "address",
 								"name": "ToID",
 								"type": "address"
+							},
+							{
+								"internalType": "string",
+								"name": "ToName",
+								"type": "string"
+							},
+							{
+								"internalType": "enum Definitions.UserRoles",
+								"name": "ToRole",
+								"type": "uint8"
 							},
 							{
 								"internalType": "uint256",
@@ -519,7 +568,7 @@
 								"type": "uint256"
 							}
 						],
-						"internalType": "struct Utils.PatchTransaction[]",
+						"internalType": "struct Definitions.PatchTransactionsFullData[]",
 						"name": "UserTransaction",
 						"type": "tuple[]"
 					}
@@ -560,9 +609,29 @@
 								"type": "address"
 							},
 							{
+								"internalType": "string",
+								"name": "FromName",
+								"type": "string"
+							},
+							{
+								"internalType": "enum Definitions.UserRoles",
+								"name": "FromRole",
+								"type": "uint8"
+							},
+							{
 								"internalType": "address",
 								"name": "ToID",
 								"type": "address"
+							},
+							{
+								"internalType": "string",
+								"name": "ToName",
+								"type": "string"
+							},
+							{
+								"internalType": "enum Definitions.UserRoles",
+								"name": "ToRole",
+								"type": "uint8"
 							},
 							{
 								"internalType": "uint256",
@@ -575,7 +644,7 @@
 								"type": "uint256"
 							}
 						],
-						"internalType": "struct Utils.PatchTransaction[]",
+						"internalType": "struct Definitions.PatchTransactionsFullData[]",
 						"name": "UserTransaction",
 						"type": "tuple[]"
 					}
@@ -606,12 +675,12 @@
 								"type": "string"
 							},
 							{
-								"internalType": "enum Utils.UserRoles",
+								"internalType": "enum Definitions.UserRoles",
 								"name": "UserRole",
 								"type": "uint8"
 							},
 							{
-								"internalType": "enum Utils.Statuses",
+								"internalType": "enum Definitions.Statuses",
 								"name": "UserStatus",
 								"type": "uint8"
 							},
@@ -631,7 +700,7 @@
 								"type": "address"
 							}
 						],
-						"internalType": "struct Utils.User",
+						"internalType": "struct Definitions.User",
 						"name": "",
 						"type": "tuple"
 					}
@@ -739,20 +808,28 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/Drugs.sol": {
-			"keccak256": "0xf9011dbf23ef3ca5ffefd3fe86669803a3af18413f4db098ef08044001c3d606",
+		"contracts/Definitions.sol": {
+			"keccak256": "0x887f4e4417e1ea535f962872c10839c237e32e0b6ddc5af4d64dc66d15ac689b",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://32449cc427bfaf5bbcc5073abc70d4fcf9512929fa204ed2c2f97bfac51dbe6e",
-				"dweb:/ipfs/QmWEAiMhF6bnb2UJUQibd4WJYAZVyNFtuJqoKZhxc78bAB"
+				"bzz-raw://a8a72b9890d169af9387b6b1762e3dc60ebe357ad2325b32ca86869625dd823f",
+				"dweb:/ipfs/QmSzUiZ7D2LDEDevyguGLCq93UWd2pP6aUVYXuhNBE8JGJ"
+			]
+		},
+		"contracts/Drugs.sol": {
+			"keccak256": "0x70623e2d153d3f79fff85342d83c94dc23d761d19ee2e9095b6963dbb29585c2",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://9d42c68e3a18a1cc1cfe0047a6c1db4ce3778cde6c797a4e3f2290a7bfa2463f",
+				"dweb:/ipfs/QmRYa9e2BWhaTCVqowGo8hWUqt4eMVpZBQBtv6DGmaCyvT"
 			]
 		},
 		"contracts/Utils.sol": {
-			"keccak256": "0x314316b680b35def36a69de83d770e120a405584e7e1719d1516335f885b8286",
+			"keccak256": "0x773da737a4bf73d9b1647ad7e2f9393e75eab932037f61f405d19fdcff98e71e",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://fedabda9e81f83d7dac6cf321e0547738830dab1d848ffd62dac85a9f54b0547",
-				"dweb:/ipfs/QmW6E2G4orGzogk8hRR1sUuXjApGvjspYwKqmFUumzC4XG"
+				"bzz-raw://d16db0138194cfbf89dffcfad106328680d2a30babfa4c5295a6c6195de049a6",
+				"dweb:/ipfs/Qmbz69nxvz3FZmhbgVZWFSyPPW68y8JZj2gsweJSS1eGLD"
 			]
 		}
 	},

@@ -50,15 +50,6 @@ contract Definitions {
         string DrugRegNo;
         string ManName;
     }
-    enum DrugTypes {
-        HumanPharmaceutical,
-        Biological,
-        HerbalMedicine,
-        Veterinary,
-        Biocides,
-        Cosmetics,
-        DietarySupplement
-    }
     mapping(string => Drug) DrugRegNoMapping;
     string[] DrugsRegNos;
 
@@ -87,4 +78,11 @@ contract Definitions {
         uint256 TransactionDate;
     }
     PatchTransaction[] public PatchTrannsactions;
+
+    struct EPRAccess{
+        address PatientAddress;
+        address DoctorAddress;
+        bool HasAccess;
+    }
+    EPRAccess[] public EPRAccessList;
 }

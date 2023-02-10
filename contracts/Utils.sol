@@ -279,4 +279,49 @@ contract Utils is Definitions {
         }
         _remainamount = mainAmount - toAmount;
     }
+
+    ///EPR
+    function ReadEPRAccessByPatient() public view returns (EPRAccess[] memory AccessList){
+        uint256 MatchedRows;
+        EPRAccess[] memory TempRow = new EPRAccess[](
+            EPRAccessList.length
+        );
+        for (uint256 i = 0; i < EPRAccessList.length; i++) {
+            if (
+                EPRAccessList[i].PatientAddress == msg.sender
+            ) {
+                TempRow[MatchedRows] = EPRAccessList[i];
+                MatchedRows++;
+            }
+        }
+        AccessList = new EPRAccess[](MatchedRows);
+        if (MatchedRows > 0) {
+            for (uint256 i = 0; i < MatchedRows; i++) {
+                AccessList[i] = TempRow[i];
+            }
+        }
+        
+    }
+
+    function ReadEPRAccessByDoctor() public view returns (EPRAccess[] memory AccessList){
+        uint256 MatchedRows;
+        EPRAccess[] memory TempRow = new EPRAccess[](
+            EPRAccessList.length
+        );
+        for (uint256 i = 0; i < EPRAccessList.length; i++) {
+            if (
+                EPRAccessList[i].DoctorAddress == msg.sender && EPRAccessList[i].HasAccess == true
+            ) {
+                TempRow[MatchedRows] = EPRAccessList[i];
+                MatchedRows++;
+            }
+        }
+        AccessList = new EPRAccess[](MatchedRows);
+        if (MatchedRows > 0) {
+            for (uint256 i = 0; i < MatchedRows; i++) {
+                AccessList[i] = TempRow[i];
+            }
+        }
+        
+    }
 }

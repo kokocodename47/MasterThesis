@@ -8,6 +8,35 @@
 			{
 				"inputs": [
 					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "EPRAccessList",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "PatientAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "DoctorAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "HasAccess",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "enum Definitions.Statuses",
 						"name": "_status",
 						"type": "uint8"
@@ -301,6 +330,66 @@
 						],
 						"internalType": "struct Definitions.DrugMan[]",
 						"name": "DrugsList",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "ReadEPRAccessByDoctor",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "PatientAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "DoctorAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "bool",
+								"name": "HasAccess",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct Definitions.EPRAccess[]",
+						"name": "AccessList",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "ReadEPRAccessByPatient",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "PatientAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "DoctorAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "bool",
+								"name": "HasAccess",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct Definitions.EPRAccess[]",
+						"name": "AccessList",
 						"type": "tuple[]"
 					}
 				],
@@ -716,7 +805,11 @@
 		},
 		"userdoc": {
 			"kind": "user",
-			"methods": {},
+			"methods": {
+				"ReadEPRAccessByPatient()": {
+					"notice": "EPR"
+				}
+			},
 			"version": 1
 		}
 	},
@@ -737,19 +830,19 @@
 	},
 	"sources": {
 		"contracts/Definitions.sol": {
-			"keccak256": "0xa2d7f6b6d6a7a9959926897f62e2fce3e7f0b7b549786175841bda21f3c80364",
+			"keccak256": "0x887f4e4417e1ea535f962872c10839c237e32e0b6ddc5af4d64dc66d15ac689b",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://b5d635c2f90c5a51a6b2e7767ed4f4589165ff53962accffcac97187bb643943",
-				"dweb:/ipfs/QmcUfK4Y5DHTe4ncgn7D1Pui6DZP3P9cNrRG7SxPZ2ceQS"
+				"bzz-raw://a8a72b9890d169af9387b6b1762e3dc60ebe357ad2325b32ca86869625dd823f",
+				"dweb:/ipfs/QmSzUiZ7D2LDEDevyguGLCq93UWd2pP6aUVYXuhNBE8JGJ"
 			]
 		},
 		"contracts/Utils.sol": {
-			"keccak256": "0x773da737a4bf73d9b1647ad7e2f9393e75eab932037f61f405d19fdcff98e71e",
+			"keccak256": "0xdedd44a05f9b3a30b5ca459994b8a55c7728c94b57e165c59110aca689db5973",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://d16db0138194cfbf89dffcfad106328680d2a30babfa4c5295a6c6195de049a6",
-				"dweb:/ipfs/Qmbz69nxvz3FZmhbgVZWFSyPPW68y8JZj2gsweJSS1eGLD"
+				"bzz-raw://4451a2886a560633142e3a449318ad832471aa1eebdc1469210ad4242d3efe3a",
+				"dweb:/ipfs/Qmf4eXNeXX1JBhaNWYbHpkhf13CbkaoiXLWBtqkaNbcMog"
 			]
 		}
 	},
