@@ -196,6 +196,35 @@
 			{
 				"inputs": [
 					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "EPRAccessList",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "PatientAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "DoctorAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "HasAccess",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "enum Definitions.Statuses",
 						"name": "_status",
 						"type": "uint8"
@@ -489,6 +518,66 @@
 						],
 						"internalType": "struct Definitions.DrugMan[]",
 						"name": "DrugsList",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "ReadEPRAccessByDoctor",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "PatientAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "DoctorAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "bool",
+								"name": "HasAccess",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct Definitions.EPRAccess[]",
+						"name": "AccessList",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "ReadEPRAccessByPatient",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "PatientAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "DoctorAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "bool",
+								"name": "HasAccess",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct Definitions.EPRAccess[]",
+						"name": "AccessList",
 						"type": "tuple[]"
 					}
 				],
@@ -971,7 +1060,11 @@
 		},
 		"userdoc": {
 			"kind": "user",
-			"methods": {},
+			"methods": {
+				"ReadEPRAccessByPatient()": {
+					"notice": "EPR"
+				}
+			},
 			"version": 1
 		}
 	},
@@ -992,11 +1085,11 @@
 	},
 	"sources": {
 		"contracts/Definitions.sol": {
-			"keccak256": "0x57e2d63c127b4c17d24a8fb2a66aa6699ac92a1f6635b77029ab6f9d6f69f29a",
+			"keccak256": "0x887f4e4417e1ea535f962872c10839c237e32e0b6ddc5af4d64dc66d15ac689b",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://bd751cc4bd1cc6d24a2d605bab291c9742bf8073864da6388ef6a0f90b50cc55",
-				"dweb:/ipfs/QmfYW3ZiapJytjWXeUfyteNV33y1c8ika27pnSVuLw869h"
+				"bzz-raw://a8a72b9890d169af9387b6b1762e3dc60ebe357ad2325b32ca86869625dd823f",
+				"dweb:/ipfs/QmSzUiZ7D2LDEDevyguGLCq93UWd2pP6aUVYXuhNBE8JGJ"
 			]
 		},
 		"contracts/Deployer.sol": {
@@ -1008,11 +1101,11 @@
 			]
 		},
 		"contracts/Drugs.sol": {
-			"keccak256": "0xf9011dbf23ef3ca5ffefd3fe86669803a3af18413f4db098ef08044001c3d606",
+			"keccak256": "0x70623e2d153d3f79fff85342d83c94dc23d761d19ee2e9095b6963dbb29585c2",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://32449cc427bfaf5bbcc5073abc70d4fcf9512929fa204ed2c2f97bfac51dbe6e",
-				"dweb:/ipfs/QmWEAiMhF6bnb2UJUQibd4WJYAZVyNFtuJqoKZhxc78bAB"
+				"bzz-raw://9d42c68e3a18a1cc1cfe0047a6c1db4ce3778cde6c797a4e3f2290a7bfa2463f",
+				"dweb:/ipfs/QmRYa9e2BWhaTCVqowGo8hWUqt4eMVpZBQBtv6DGmaCyvT"
 			]
 		},
 		"contracts/PatchsTransactions.sol": {
@@ -1040,11 +1133,11 @@
 			]
 		},
 		"contracts/Utils.sol": {
-			"keccak256": "0x773da737a4bf73d9b1647ad7e2f9393e75eab932037f61f405d19fdcff98e71e",
+			"keccak256": "0xdedd44a05f9b3a30b5ca459994b8a55c7728c94b57e165c59110aca689db5973",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://d16db0138194cfbf89dffcfad106328680d2a30babfa4c5295a6c6195de049a6",
-				"dweb:/ipfs/Qmbz69nxvz3FZmhbgVZWFSyPPW68y8JZj2gsweJSS1eGLD"
+				"bzz-raw://4451a2886a560633142e3a449318ad832471aa1eebdc1469210ad4242d3efe3a",
+				"dweb:/ipfs/Qmf4eXNeXX1JBhaNWYbHpkhf13CbkaoiXLWBtqkaNbcMog"
 			]
 		}
 	},

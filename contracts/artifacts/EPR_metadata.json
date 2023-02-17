@@ -9,6 +9,11 @@
 				"inputs": [
 					{
 						"internalType": "address",
+						"name": "_patient",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
 						"name": "_doctor",
 						"type": "address"
 					},
@@ -373,6 +378,98 @@
 						],
 						"internalType": "struct Definitions.DrugMan[]",
 						"name": "DrugsList",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_address",
+						"type": "address"
+					}
+				],
+				"name": "ReadEPRAccessByDoctor",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "PatientAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "string",
+								"name": "PatientName",
+								"type": "string"
+							},
+							{
+								"internalType": "address",
+								"name": "DoctorAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "string",
+								"name": "DoctorName",
+								"type": "string"
+							},
+							{
+								"internalType": "bool",
+								"name": "HasAccess",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct Definitions.EPRAccessFullData[]",
+						"name": "AccessList",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_address",
+						"type": "address"
+					}
+				],
+				"name": "ReadEPRAccessByPatient",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "PatientAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "string",
+								"name": "PatientName",
+								"type": "string"
+							},
+							{
+								"internalType": "address",
+								"name": "DoctorAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "string",
+								"name": "DoctorName",
+								"type": "string"
+							},
+							{
+								"internalType": "bool",
+								"name": "HasAccess",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct Definitions.EPRAccessFullData[]",
+						"name": "AccessList",
 						"type": "tuple[]"
 					}
 				],
@@ -788,7 +885,11 @@
 		},
 		"userdoc": {
 			"kind": "user",
-			"methods": {},
+			"methods": {
+				"ReadEPRAccessByPatient(address)": {
+					"notice": "EPR"
+				}
+			},
 			"version": 1
 		}
 	},
@@ -809,27 +910,27 @@
 	},
 	"sources": {
 		"contracts/Definitions.sol": {
-			"keccak256": "0x887f4e4417e1ea535f962872c10839c237e32e0b6ddc5af4d64dc66d15ac689b",
+			"keccak256": "0xadcb2e11fe93b9f73ee9d7cebade8d794720f83286b40022fe29ba78335a2d98",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://a8a72b9890d169af9387b6b1762e3dc60ebe357ad2325b32ca86869625dd823f",
-				"dweb:/ipfs/QmSzUiZ7D2LDEDevyguGLCq93UWd2pP6aUVYXuhNBE8JGJ"
+				"bzz-raw://ffa95041d55ebb8d264f75a153f723c82569108baed6e21bfeeb90f035150b51",
+				"dweb:/ipfs/QmTuGrDanYgU4sHf1Wx14hqoyuqv3MpTAWArEDHxrXVZP8"
 			]
 		},
 		"contracts/EPR.sol": {
-			"keccak256": "0x27cc025fffaf0aea98efb082062796d5727c9bbba7d8443d3aab1cb46d86c07e",
+			"keccak256": "0xc1090aa683d1a44a8ea593c8d84b2c4e06662334ba8203122fd606bc83f288e9",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://0200cb1a5f6b3bdb4bd54c155f709e6be3ca900d2ad9e97c0c0b65c1efa37d43",
-				"dweb:/ipfs/QmNRj8KQniAjhdWYdzym6DPzBb2HMXwDeGarLyeqdDX56Z"
+				"bzz-raw://af2439c5034e676d0c119d8946e78e5d24ddb5d95376c1e6d25b27da597a447b",
+				"dweb:/ipfs/QmPTeMC8JrBue9H7gJemw8zHf8qEWNwX4KmCvk9N65Bwem"
 			]
 		},
 		"contracts/Utils.sol": {
-			"keccak256": "0x773da737a4bf73d9b1647ad7e2f9393e75eab932037f61f405d19fdcff98e71e",
+			"keccak256": "0x87387ad895161106807c8a21756fb3dfa8d071fee149dc8a2e0bd887f1ab1ad8",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://d16db0138194cfbf89dffcfad106328680d2a30babfa4c5295a6c6195de049a6",
-				"dweb:/ipfs/Qmbz69nxvz3FZmhbgVZWFSyPPW68y8JZj2gsweJSS1eGLD"
+				"bzz-raw://3bc0cbc8eca88b3e5e3db8f0f9c10a5b18649fa5470499f7c6e33b8d897b078f",
+				"dweb:/ipfs/QmPVHBxJL5sceqaBKVBnDK4moRwDtb3EQFbR9srwYhMVFq"
 			]
 		}
 	},

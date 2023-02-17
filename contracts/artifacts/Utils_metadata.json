@@ -337,7 +337,13 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_address",
+						"type": "address"
+					}
+				],
 				"name": "ReadEPRAccessByDoctor",
 				"outputs": [
 					{
@@ -348,9 +354,19 @@
 								"type": "address"
 							},
 							{
+								"internalType": "string",
+								"name": "PatientName",
+								"type": "string"
+							},
+							{
 								"internalType": "address",
 								"name": "DoctorAddress",
 								"type": "address"
+							},
+							{
+								"internalType": "string",
+								"name": "DoctorName",
+								"type": "string"
 							},
 							{
 								"internalType": "bool",
@@ -358,7 +374,7 @@
 								"type": "bool"
 							}
 						],
-						"internalType": "struct Definitions.EPRAccess[]",
+						"internalType": "struct Definitions.EPRAccessFullData[]",
 						"name": "AccessList",
 						"type": "tuple[]"
 					}
@@ -367,7 +383,13 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_address",
+						"type": "address"
+					}
+				],
 				"name": "ReadEPRAccessByPatient",
 				"outputs": [
 					{
@@ -378,9 +400,19 @@
 								"type": "address"
 							},
 							{
+								"internalType": "string",
+								"name": "PatientName",
+								"type": "string"
+							},
+							{
 								"internalType": "address",
 								"name": "DoctorAddress",
 								"type": "address"
+							},
+							{
+								"internalType": "string",
+								"name": "DoctorName",
+								"type": "string"
 							},
 							{
 								"internalType": "bool",
@@ -388,7 +420,7 @@
 								"type": "bool"
 							}
 						],
-						"internalType": "struct Definitions.EPRAccess[]",
+						"internalType": "struct Definitions.EPRAccessFullData[]",
 						"name": "AccessList",
 						"type": "tuple[]"
 					}
@@ -806,7 +838,7 @@
 		"userdoc": {
 			"kind": "user",
 			"methods": {
-				"ReadEPRAccessByPatient()": {
+				"ReadEPRAccessByPatient(address)": {
 					"notice": "EPR"
 				}
 			},
@@ -830,19 +862,19 @@
 	},
 	"sources": {
 		"contracts/Definitions.sol": {
-			"keccak256": "0x887f4e4417e1ea535f962872c10839c237e32e0b6ddc5af4d64dc66d15ac689b",
+			"keccak256": "0xadcb2e11fe93b9f73ee9d7cebade8d794720f83286b40022fe29ba78335a2d98",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://a8a72b9890d169af9387b6b1762e3dc60ebe357ad2325b32ca86869625dd823f",
-				"dweb:/ipfs/QmSzUiZ7D2LDEDevyguGLCq93UWd2pP6aUVYXuhNBE8JGJ"
+				"bzz-raw://ffa95041d55ebb8d264f75a153f723c82569108baed6e21bfeeb90f035150b51",
+				"dweb:/ipfs/QmTuGrDanYgU4sHf1Wx14hqoyuqv3MpTAWArEDHxrXVZP8"
 			]
 		},
 		"contracts/Utils.sol": {
-			"keccak256": "0xdedd44a05f9b3a30b5ca459994b8a55c7728c94b57e165c59110aca689db5973",
+			"keccak256": "0x87387ad895161106807c8a21756fb3dfa8d071fee149dc8a2e0bd887f1ab1ad8",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://4451a2886a560633142e3a449318ad832471aa1eebdc1469210ad4242d3efe3a",
-				"dweb:/ipfs/Qmf4eXNeXX1JBhaNWYbHpkhf13CbkaoiXLWBtqkaNbcMog"
+				"bzz-raw://3bc0cbc8eca88b3e5e3db8f0f9c10a5b18649fa5470499f7c6e33b8d897b078f",
+				"dweb:/ipfs/QmPVHBxJL5sceqaBKVBnDK4moRwDtb3EQFbR9srwYhMVFq"
 			]
 		}
 	},

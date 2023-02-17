@@ -10,9 +10,9 @@ contract EPR is Utils {
         return true;
     }
 
-    function AlterAccess(address _doctor, bool _access) public returns (bool) {
+    function AlterAccess(address _patient, address _doctor, bool _access) public returns (bool) {
         for (uint256 i = 0; i < EPRAccessList.length; i++) {
-            if(EPRAccessList[i].PatientAddress == msg.sender && EPRAccessList[i].DoctorAddress == _doctor){
+            if(EPRAccessList[i].PatientAddress == _patient && EPRAccessList[i].DoctorAddress == _doctor){
                 EPRAccessList[i].HasAccess = _access;
             }
         }

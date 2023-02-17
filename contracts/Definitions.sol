@@ -84,5 +84,13 @@ contract Definitions {
         address DoctorAddress;
         bool HasAccess;
     }
+
+    struct EPRAccessFullData{
+        address PatientAddress;
+        string PatientName;
+        address DoctorAddress;
+        string DoctorName;
+        bool HasAccess;
+    }
     EPRAccess[] public EPRAccessList;
 }

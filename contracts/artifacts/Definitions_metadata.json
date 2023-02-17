@@ -125,11 +125,11 @@
 	},
 	"sources": {
 		"contracts/Definitions.sol": {
-			"keccak256": "0x887f4e4417e1ea535f962872c10839c237e32e0b6ddc5af4d64dc66d15ac689b",
+			"keccak256": "0xadcb2e11fe93b9f73ee9d7cebade8d794720f83286b40022fe29ba78335a2d98",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://a8a72b9890d169af9387b6b1762e3dc60ebe357ad2325b32ca86869625dd823f",
-				"dweb:/ipfs/QmSzUiZ7D2LDEDevyguGLCq93UWd2pP6aUVYXuhNBE8JGJ"
+				"bzz-raw://ffa95041d55ebb8d264f75a153f723c82569108baed6e21bfeeb90f035150b51",
+				"dweb:/ipfs/QmTuGrDanYgU4sHf1Wx14hqoyuqv3MpTAWArEDHxrXVZP8"
 			]
 		}
 	},

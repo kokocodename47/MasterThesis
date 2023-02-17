@@ -6,8 +6,9 @@ import "./Regulator.sol";
 import "./Users.sol";
 import "./Drugs.sol";
 import "./PatchsTransactions.sol";
+import "./EPR.sol";
 
-contract Deployer is Regulator, Users, Drugs, PatchsTransactions {
+contract Deployer is Regulator, Users, Drugs, PatchsTransactions, EPR {
     constructor() {
         Owner = msg.sender;
         //RegisterDeployer();

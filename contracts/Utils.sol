@@ -281,45 +281,51 @@ contract Utils is Definitions {
     }
 
     ///EPR
-    function ReadEPRAccessByPatient() public view returns (EPRAccess[] memory AccessList){
+    function ReadEPRAccessByPatient(address _address) public view returns (EPRAccessFullData[] memory AccessList){
         uint256 MatchedRows;
         EPRAccess[] memory TempRow = new EPRAccess[](
             EPRAccessList.length
         );
         for (uint256 i = 0; i < EPRAccessList.length; i++) {
             if (
-                EPRAccessList[i].PatientAddress == msg.sender
+                EPRAccessList[i].PatientAddress == _address
             ) {
                 TempRow[MatchedRows] = EPRAccessList[i];
                 MatchedRows++;
             }
         }
-        AccessList = new EPRAccess[](MatchedRows);
+        AccessList = new EPRAccessFullData[](MatchedRows);
         if (MatchedRows > 0) {
             for (uint256 i = 0; i < MatchedRows; i++) {
-                AccessList[i] = TempRow[i];
+                AccessList[i].PatientAddress = TempRow[i].PatientAddress;
+                AccessList[i].DoctorAddress = TempRow[i].DoctorAddress;
+                AccessList[i].DoctorName = UserAddressMapping[AccessList[i].DoctorAddress].UserName;
+                AccessList[i].HasAccess = TempRow[i].HasAccess;
             }
         }
         
     }
 
-    function ReadEPRAccessByDoctor() public view returns (EPRAccess[] memory AccessList){
+    function ReadEPRAccessByDoctor(address _address) public view returns (EPRAccessFullData[] memory AccessList){
         uint256 MatchedRows;
         EPRAccess[] memory TempRow = new EPRAccess[](
             EPRAccessList.length
         );
         for (uint256 i = 0; i < EPRAccessList.length; i++) {
             if (
-                EPRAccessList[i].DoctorAddress == msg.sender && EPRAccessList[i].HasAccess == true
+                EPRAccessList[i].DoctorAddress == _address && EPRAccessList[i].HasAccess == true
             ) {
                 TempRow[MatchedRows] = EPRAccessList[i];
                 MatchedRows++;
             }
         }
-        AccessList = new EPRAccess[](MatchedRows);
+        AccessList = new EPRAccessFullData[](MatchedRows);
         if (MatchedRows > 0) {
             for (uint256 i = 0; i < MatchedRows; i++) {
-                AccessList[i] = TempRow[i];
+                AccessList[i].PatientAddress = TempRow[i].PatientAddress;
+                AccessList[i].PatientName = UserAddressMapping[AccessList[i].PatientAddress].UserName;
+                AccessList[i].DoctorAddress = TempRow[i].DoctorAddress;               
+                AccessList[i].HasAccess = TempRow[i].HasAccess;
             }
         }
         
